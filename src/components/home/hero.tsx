@@ -118,15 +118,15 @@ export default function Hero() {
 
         .outline-glitch::before {
           opacity: 1;
-          animation: cyber-glitch-1 8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-          -webkit-text-stroke: 1.5px rgba(255, 50, 50, 0.4);
+          animation: cyber-glitch-1 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+          -webkit-text-stroke: 2px rgba(255, 50, 50, 0.8);
           z-index: 10;
         }
         
         .outline-glitch::after {
           opacity: 1;
-          animation: cyber-glitch-1 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse infinite;
-          -webkit-text-stroke: 1.5px rgba(34, 211, 238, 0.4);
+          animation: cyber-glitch-1 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse infinite;
+          -webkit-text-stroke: 2px rgba(34, 211, 238, 0.8);
           z-index: 10;
         }
 
@@ -226,7 +226,7 @@ export default function Hero() {
                 <span className="shimmer-text block w-full drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">Nurulla</span>
               </span>
               <span className="block text-[clamp(4.5rem,12vw,6.5rem)] lg:text-[clamp(5.5rem,8vw,10rem)] leading-[0.8] font-bold tracking-tight uppercase w-full wrap-break-word">
-                <span className="outline-glitch block w-full" data-text="Hasan.">Hasan.</span>
+                <span className="outline-glitch block w-full" data-text="Hasan.">Hasan</span>
               </span>
             </h1>
 

@@ -1,222 +1,216 @@
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { ArrowRight, Download } from "lucide-react";
-
-import { Button } from "../ui/button";
 
 export default function Hero() {
   return (
-    <main className="relative isolate min-h-screen overflow-hidden bg-[radial-gradient(circle_at_top,rgba(96,165,250,0.07),transparent_26%),linear-gradient(135deg,#020409_0%,#050914_42%,#020305_100%)] text-white">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.04),transparent_18%,transparent_82%,rgba(255,255,255,0.03))]"
-      />
-      <div
-        aria-hidden="true"
-        className="hero-grid pointer-events-none absolute inset-0 opacity-[0.15]"
-      />
-      <div
-        aria-hidden="true"
-        className="hero-grid-neon pointer-events-none absolute inset-0 opacity-[0.72]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/12"
-      />
+    <>
+      <style suppressHydrationWarning>{`
+        @keyframes line-draw {
+          from { transform: scaleY(0); }
+          to { transform: scaleY(1); }
+        }
+        @keyframes line-draw-h {
+          from { transform: scaleX(0); }
+          to { transform: scaleX(1); }
+        }
+        @keyframes fade-slide {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes walk-v {
+          0% { top: -20%; }
+          100% { top: 120%; }
+        }
+        @keyframes walk-h {
+          0% { left: -20%; }
+          100% { left: 120%; }
+        }
+        @keyframes text-shimmer-subtle {
+          0% { background-position: -200% 50%; }
+          100% { background-position: 200% 50%; }
+        }
+        @keyframes blink-slow {
+          0%, 100% { opacity: 0.2; }
+          50% { opacity: 0.8; }
+        }
+        @keyframes svg-walk-circle {
+          from { stroke-dashoffset: 100; }
+          to { stroke-dashoffset: 0; }
+        }
+        @keyframes svg-walk-circle-reverse {
+          from { stroke-dashoffset: 0; }
+          to { stroke-dashoffset: 100; }
+        }
 
-      <section className="relative flex min-h-screen items-center px-6 py-12 sm:px-10 lg:px-16 xl:px-24">
-        <div className="mx-auto grid w-full max-w-375 items-center gap-14 lg:grid-cols-[minmax(0,1.02fr)_minmax(420px,0.98fr)] lg:gap-8">
-          <div className="hero-fade-in relative z-10 max-w-4xl lg:grid lg:grid-cols-[120px_minmax(0,1fr)] lg:gap-8">
-            <div className="mb-8 hidden lg:flex lg:flex-col lg:items-start lg:pt-4">
-              <span className="text-[0.68rem] font-medium tracking-[0.34em] text-white/34 uppercase">
-                Based in
-              </span>
-              <span className="mt-3 text-sm tracking-[0.18em] text-white/58 uppercase">
-                Bangladesh
-              </span>
-              <div className="mt-8 h-28 w-px bg-linear-to-b from-cyan-300/80 via-white/20 to-transparent shadow-[0_0_20px_rgba(103,232,249,0.25)]" />
-            </div>
+        .anim-line {
+          transform-origin: top;
+          animation: line-draw 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        }
+        .anim-line-h {
+          transform-origin: left;
+          animation: line-draw-h 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        }
+        .anim-element {
+          opacity: 0;
+          animation: fade-slide 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
 
-            <div>
-              <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/12 bg-white/3 px-4 py-2 text-[0.68rem] font-medium tracking-[0.28em] text-white/60 uppercase backdrop-blur-md">
-                <span className="h-2 w-2 rounded-full bg-cyan-300/80 shadow-[0_0_14px_rgba(103,232,249,0.75)]" />
-                Frontend Developer Portfolio
-              </div>
+        .shimmer-text {
+          background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0.9) 35%,
+            rgba(34, 211, 238, 0.8) 50%,
+            rgba(255, 255, 255, 0.9) 65%,
+            rgba(255, 255, 255, 1) 100%
+          );
+          background-size: 200% auto;
+          color: transparent;
+          -webkit-background-clip: text;
+          background-clip: text;
+          animation: text-shimmer-subtle 7s ease-in-out infinite;
+        }
 
-              <div className="mb-6 flex items-center gap-4">
-                <div className="h-px w-16 bg-linear-to-r from-cyan-300/80 to-transparent shadow-[0_0_18px_rgba(103,232,249,0.45)]" />
-                <p className="text-[0.72rem] font-medium tracking-[0.34em] text-white/45 uppercase">
-                  Available for premium frontend work
-                </p>
-              </div>
+        .walk-path-circle-1 {
+          stroke-dasharray: 2.5 100;
+          animation: svg-walk-circle 15s linear infinite;
+        }
+        .walk-path-circle-2 {
+          stroke-dasharray: 2 100;
+          animation: svg-walk-circle-reverse 12s linear infinite;
+        }
+      `}</style>
 
-              <h1 className="max-w-4xl text-balance">
-                <span className="hero-name-outline block text-[clamp(4.15rem,8vw,8.2rem)] leading-[0.84] font-bold tracking-[-0.08em] text-transparent uppercase">
-                  Nurulla
-                </span>
-                <span className="mt-[-0.02em] block text-[clamp(4.4rem,8.4vw,8.85rem)] leading-[0.84] font-bold tracking-[-0.085em] text-white/96 uppercase drop-shadow-[0_16px_45px_rgba(8,15,28,0.55)]">
-                  Hasan
-                </span>
-                <span className="hero-outline mt-5 block max-w-3xl font-heading text-[clamp(2.05rem,4vw,3.75rem)] leading-[0.92] font-semibold tracking-[-0.05em] text-transparent">
-                  Frontend-Focused
-                </span>
-                <span className="mt-4 block text-[clamp(1.02rem,1.35vw,1.28rem)] leading-[1.2] font-sans font-semibold tracking-[0.26em] text-white/60 uppercase">
-                  MERN Stack Developer
-                </span>
-              </h1>
-
-              <div className="hero-copy-rail mt-9 max-w-2xl pl-6">
-                <p className="text-base leading-8 text-white/66 sm:text-[1.08rem]">
-                  Crafting modern, scalable, and clean web experiences.
-                </p>
-              </div>
-
-              <div className="mt-11 flex flex-col gap-4 sm:flex-row">
-                <Button
-                  asChild
-                  size="lg"
-                  className="hero-button-primary h-13 rounded-full border border-white/12 px-8 text-[0.98rem] font-semibold text-slate-950 transition duration-300"
-                >
-                  <Link href="#projects">
-                    View Projects
-                    <ArrowRight className="size-4" />
-                  </Link>
-                </Button>
-
-                <Button
-                  asChild
-                  variant="outline"
-                  size="lg"
-                  className="hero-button-secondary h-13 rounded-full px-8 text-[0.98rem] font-medium text-white/90 transition duration-300"
-                >
-                  <a href="/Nurulla-Hasan-CV.pdf" download>
-                    Download CV
-                    <Download className="size-4" />
-                  </a>
-                </Button>
-              </div>
-            </div>
+      <main className="relative flex min-h-screen w-full items-center bg-[#0a0a0a] overflow-hidden selection:bg-white/20">
+        
+        {/* Abstract Background Elements & Neon Walking Circles */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          {/* Huge Right Circle */}
+          <div className="absolute top-[50%] left-[80%] w-[60vw] h-[60vw] -translate-x-1/2 -translate-y-1/2">
+             <svg className="w-full h-full" viewBox="0 0 1000 1000">
+               <circle cx="500" cy="500" r="498" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="2" />
+               <circle cx="500" cy="500" r="498" fill="none" stroke="#22d3ee" strokeWidth="4" className="walk-path-circle-1" strokeLinecap="round" pathLength="100" style={{ filter: 'drop-shadow(0 0 16px rgba(34,211,238,0.7))' }} />
+             </svg>
           </div>
+          
+          {/* Huge Left Circle */}
+          <div className="absolute top-[20%] left-[10%] w-[40vw] h-[40vw] -translate-x-1/2 -translate-y-1/2">
+             <svg className="w-full h-full rotate-180" viewBox="0 0 1000 1000">
+               <circle cx="500" cy="500" r="498" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="2" />
+               <circle cx="500" cy="500" r="498" fill="none" stroke="#818cf8" strokeWidth="4" className="walk-path-circle-2" strokeLinecap="round" pathLength="100" style={{ filter: 'drop-shadow(0 0 16px rgba(129,140,248,0.7))' }} />
+             </svg>
+          </div>
+          
+          {/* Grain */ }
+          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03]" />
+        </div>
 
-          <div className="relative hidden min-h-168 lg:block">
-            <div
-              aria-hidden="true"
-              className="animate-fog-flow absolute right-[12%] top-[10%] h-80 w-80 rounded-full bg-cyan-400/[0.14] blur-[120px]"
-            />
-            <div
-              aria-hidden="true"
-              className="animate-fog-flow-delayed absolute bottom-[14%] right-[16%] h-96 w-[24rem] rounded-full bg-indigo-400/12 blur-[150px]"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-y-[18%] right-[24%] w-px rotate-28 bg-linear-to-b from-transparent via-cyan-100/30 to-transparent blur-[0.5px]"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-y-[12%] right-[10%] w-px rotate-28 bg-linear-to-b from-transparent via-white/28 to-transparent"
-            />
+        {/* Architectural grid lines with traveling CYAN light beams */}
+        <div className="hidden lg:block absolute left-24 top-0 bottom-0 w-[1px] bg-white/[0.03] anim-line z-0 overflow-hidden">
+          <div className="absolute left-0 w-[1px] h-[150px] bg-gradient-to-b from-transparent via-cyan-400/90 to-transparent blur-[1px] shadow-[0_0_10px_rgba(34,211,238,0.5)]" style={{ animation: 'walk-v 5s linear infinite' }} />
+        </div>
+        
+        <div className="hidden lg:block absolute left-[40%] top-0 bottom-0 w-[1px] bg-white/[0.03] anim-line z-0 overflow-hidden" style={{ animationDelay: '0.2s' }}>
+          <div className="absolute left-0 w-[1px] h-[250px] bg-gradient-to-b from-transparent via-indigo-400/80 to-transparent blur-[1px] shadow-[0_0_10px_rgba(129,140,248,0.5)]" style={{ animation: 'walk-v 7s linear infinite 1.5s' }} />
+        </div>
 
-            <div className="animate-hero-drift absolute inset-y-[10%] right-[4%] w-[82%]">
-              <div className="absolute inset-x-[4%] bottom-[7%] h-[32%] rounded-[100%] bg-[radial-gradient(circle,rgba(15,23,42,0.16)_0%,rgba(2,6,23,0.72)_56%,transparent_78%)] blur-2xl" />
-              <div className="hero-grid-plane absolute bottom-[14%] right-[4%] h-[34%] w-[82%]" />
-              <div className="absolute right-[19%] top-[16%] h-64 w-[16rem] rounded-full border border-cyan-200/12 bg-[radial-gradient(circle,rgba(165,243,252,0.2)_0%,rgba(56,189,248,0.08)_30%,transparent_66%)] shadow-[0_0_90px_rgba(34,211,238,0.14)]" />
-              <div className="absolute right-[23.5%] top-[20.5%] h-36 w-36 rounded-full border border-white/18 bg-[radial-gradient(circle,rgba(255,255,255,0.24)_0%,rgba(255,255,255,0.03)_58%,transparent_76%)] backdrop-blur-sm" />
-              <div className="absolute right-[14%] top-[10%] h-112 w-md rounded-full border border-white/6" />
-              <div className="absolute right-[9%] top-[6%] h-136 w-136 rounded-full border border-cyan-300/6" />
-              <div className="absolute right-[10%] top-[28%] h-44 w-120 rotate-[-18deg] rounded-[2.5rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(255,255,255,0.01))] shadow-[0_40px_120px_rgba(0,0,0,0.42)] backdrop-blur-xl" />
-              <div className="absolute right-[26%] top-[48%] h-32 w-60 rotate-14 rounded-[2rem] border border-white/8 bg-[linear-gradient(145deg,rgba(255,255,255,0.05),rgba(255,255,255,0.008))] backdrop-blur-xl" />
-              <div className="absolute right-[27%] top-[17%] h-40 w-px bg-linear-to-b from-transparent via-cyan-200/50 to-transparent shadow-[0_0_16px_rgba(103,232,249,0.3)]" />
-              <div className="absolute right-[22%] top-[40%] h-px w-44 bg-linear-to-r from-transparent via-white/26 to-transparent" />
+        <div className="hidden lg:block absolute right-32 top-0 bottom-0 w-[1px] bg-white/[0.03] anim-line z-0 overflow-hidden" style={{ animationDelay: '0.4s' }}>
+          <div className="absolute left-0 w-[1px] h-[200px] bg-gradient-to-b from-transparent via-cyan-300/80 to-transparent blur-[1px] shadow-[0_0_8px_rgba(103,232,249,0.5)]" style={{ animation: 'walk-v 6s linear infinite 3s' }} />
+        </div>
+        
+        {/* Horizontal intersection lines */}
+        <div className="hidden lg:block absolute left-0 right-0 top-[25%] h-[1px] bg-white/[0.03] anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.6s' }}>
+          <div className="absolute top-0 h-[1px] w-[200px] bg-gradient-to-r from-transparent via-cyan-400/90 to-transparent blur-[1px] shadow-[0_0_10px_rgba(34,211,238,0.5)]" style={{ animation: 'walk-h 8s linear infinite 2s' }} />
+        </div>
+        
+        <div className="hidden lg:block absolute left-0 right-0 top-[75%] h-[1px] bg-white/[0.03] anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.8s' }}>
+          <div className="absolute top-0 h-[1px] w-[300px] bg-gradient-to-r from-transparent via-indigo-300/80 to-transparent blur-[1px]" style={{ animation: 'walk-h 10s linear infinite 0s' }} />
+        </div>
+
+        {/* Floating crosshair markers (Micro details) */}
+        <div className="absolute left-[calc(40%-4px)] top-[25%] w-2 h-2 text-white/30 text-[10px] items-center justify-center hidden lg:flex font-mono" style={{ animation: 'blink-slow 4s ease-in-out infinite' }}>+</div>
+        <div className="absolute right-[calc(8rem-4px)] top-[75%] w-2 h-2 text-white/30 text-[10px] items-center justify-center hidden lg:flex font-mono" style={{ animation: 'blink-slow 5s ease-in-out infinite 1s' }}>+</div>
+
+        <section className="container mx-auto px-8 md:px-16 relative z-10 w-full mt-20 sm:mt-0">
+          <div className="max-w-5xl lg:ml-[calc(40%-4rem)]">
+            
+            <div className="anim-element flex items-center gap-4 mb-12">
+              <span className="w-12 h-[1px] bg-white/20 block" />
+              <span className="text-[0.65rem] font-medium tracking-[0.4em] text-white/40 uppercase">
+                Portfolio &apos;26
+              </span>
             </div>
 
-            <div className="absolute right-[6%] top-[16%] w-[78%] rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(7,12,22,0.94),rgba(5,9,18,0.78))] shadow-[0_35px_110px_rgba(0,0,0,0.42)] backdrop-blur-xl">
-              <div className="flex items-center justify-between border-b border-white/8 px-5 py-4">
-                <div className="flex items-center gap-2.5">
-                  <span className="h-2.5 w-2.5 rounded-full bg-rose-300/80" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-amber-300/80" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-300/80" />
-                </div>
-                <div className="rounded-full border border-white/8 bg-white/3 px-3 py-1 text-[0.64rem] font-medium tracking-[0.24em] text-white/42 uppercase">
-                  app/hero.tsx
-                </div>
-              </div>
+            <h1 className="anim-element relative z-10" style={{ animationDelay: '0.1s' }}>
+              <span className="block text-[clamp(3.5rem,7vw,7rem)] leading-[1.05] font-light tracking-[-0.03em] text-white">
+                <span className="shimmer-text drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">Nurulla</span>
+              </span>
+              <span className="block text-[clamp(3.5rem,7vw,7rem)] leading-[0.95] font-medium tracking-[-0.03em] text-white">
+                <span className="shimmer-text drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">Hasan.</span>
+              </span>
+            </h1>
 
-              <div className="grid grid-cols-[56px_minmax(0,1fr)]">
-                <div className="border-r border-white/6 bg-black/12 px-3 py-5 text-right text-[0.76rem] leading-8 text-white/24">
-                  <div>01</div>
-                  <div>02</div>
-                  <div>03</div>
-                  <div>04</div>
-                  <div>05</div>
-                  <div>06</div>
-                  <div>07</div>
-                  <div>08</div>
-                </div>
+            <div className="anim-element mt-12 grid sm:grid-cols-[1fr_1.2fr] gap-12 items-start relative z-10" style={{ animationDelay: '0.2s' }}>
+              <p className="text-[0.95rem] font-light leading-relaxed text-white/40 max-w-sm">
+                A minimalistic approach to engineering. Specializing in highly optimized, mathematically precise frontend experiences using the MERN stack. I build interfaces that feel alive, combining structural robustness with fluid motion.
+              </p>
 
-                <div className="px-5 py-5 font-mono text-[0.82rem] leading-8">
-                  <div className="text-cyan-200/84">
-                    <span className="text-fuchsia-200/78">const</span>{" "}
-                    <span className="text-white/88">portfolio</span>{" "}
-                    <span className="text-white/44">=</span>{" "}
-                    <span className="text-cyan-200/84">{"{"}</span>
-                  </div>
-                  <div className="pl-5 text-white/66">
-                    <span className="text-sky-200/74">name</span>
-                    <span className="text-white/40">:</span>{" "}
-                    <span className="text-emerald-200/76">&quot;Nurulla Hasan&quot;</span>
-                    <span className="text-white/40">,</span>
-                  </div>
-                  <div className="pl-5 text-white/66">
-                    <span className="text-sky-200/74">role</span>
-                    <span className="text-white/40">:</span>{" "}
-                    <span className="text-emerald-200/76">
-                      &quot;Frontend-Focused MERN Developer&quot;
+              <div className="flex flex-col gap-10 items-start sm:border-l border-white/5 sm:pl-10">
+                {/* Expanded Micro-Stats / Info Grid */}
+                <div className="grid grid-cols-2 gap-x-10 gap-y-8 w-full">
+                  <div className="flex flex-col gap-2">
+                    <span className="text-[0.6rem] tracking-[0.2em] text-white/30 uppercase flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" /> Focus
                     </span>
-                    <span className="text-white/40">,</span>
+                    <span className="text-sm font-medium text-white/70 tracking-wide">React / Next.js / UX</span>
                   </div>
-                  <div className="pl-5 text-white/66">
-                    <span className="text-sky-200/74">focus</span>
-                    <span className="text-white/40">:</span>{" "}
-                    <span className="text-amber-100/72">
-                      [&quot;UI&quot;, &quot;DX&quot;, &quot;Motion&quot;]
-                    </span>
-                    <span className="text-white/40">,</span>
-                  </div>
-                  <div className="pl-5 text-white/66">
-                    <span className="text-sky-200/74">status</span>
-                    <span className="text-white/40">:</span>{" "}
-                    <span className="text-cyan-200/84">
-                      &quot;Building elegant interfaces&quot;
-                    </span>
-                  </div>
-                  <div className="text-cyan-200/84">{"}"}</div>
 
-                  <div className="mt-5 flex items-center gap-3">
-                    <span className="inline-flex rounded-full border border-cyan-300/16 bg-cyan-300/8 px-3 py-1 text-[0.68rem] tracking-[0.2em] text-cyan-100/72 uppercase">
-                      React
+                  <div className="flex flex-col gap-2">
+                    <span className="text-[0.6rem] tracking-[0.2em] text-white/30 uppercase flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" /> Status
                     </span>
-                    <span className="inline-flex rounded-full border border-white/10 bg-white/3 px-3 py-1 text-[0.68rem] tracking-[0.2em] text-white/58 uppercase">
-                      Next.js
-                    </span>
-                    <span className="inline-flex rounded-full border border-white/10 bg-white/3 px-3 py-1 text-[0.68rem] tracking-[0.2em] text-white/58 uppercase">
-                      Tailwind
-                    </span>
+                    <span className="text-sm font-medium text-white/70 tracking-wide">Available for Work</span>
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <span className="text-[0.6rem] tracking-[0.2em] text-white/30 uppercase">Experience</span>
+                    <span className="text-[1.1rem] font-semibold text-white/90">2+ Years</span>
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <span className="text-[0.6rem] tracking-[0.2em] text-white/30 uppercase">Projects Delivered</span>
+                    <span className="text-[1.1rem] font-semibold text-white/90">40+ Digital Assets</span>
                   </div>
                 </div>
+                
+                <Link 
+                  href="#projects" 
+                  className="group flex items-center gap-4 border-b border-white/20 pb-2 hover:border-cyan-400 transition-colors"
+                >
+                  <span className="text-[0.75rem] font-medium tracking-[0.2em] uppercase text-white group-hover:text-cyan-300 transition-colors">
+                    Explore Ecosystem
+                  </span>
+                  <div className="relative overflow-hidden w-6 h-6 flex items-center justify-center">
+                    <ArrowRight className="w-4 h-4 text-white/50 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
+                  </div>
+                </Link>
               </div>
             </div>
 
-            <div
-              aria-hidden="true"
-              className="absolute bottom-[12%] right-[14%] h-32 w-[56%] rounded-full bg-black/55 blur-[72px]"
-            />
+          </div>
+        </section>
+
+        {/* Abstract Scroll Indicator */}
+        <div className="absolute right-8 md:right-16 bottom-0 anim-element" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col items-center gap-4 pb-12">
+            <span className="text-[0.55rem] font-medium tracking-[0.3em] uppercase text-white/30 rotate-90 origin-bottom translate-y-6">
+              Scroll
+            </span>
+            <div className="w-[1px] h-24 bg-gradient-to-t from-white/20 to-transparent" />
           </div>
         </div>
-      </section>
 
-      <div
-        id="projects"
-        className="absolute bottom-0 left-0 h-px w-px opacity-0"
-      />
-    </main>
+      </main>
+    </>
   );
 }

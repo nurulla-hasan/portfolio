@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Plus } from "lucide-react";
 import { Outfit } from "next/font/google";
 
 const uniqueFont = Outfit({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
@@ -26,7 +25,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) ${
+      className={`fixed top-0 left-0 w-full z-100 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) ${
         isScrolled
           ? "bg-black/60 backdrop-blur-2xl border-b border-white/5 py-4"
           : "bg-transparent py-10"
@@ -45,12 +44,12 @@ export default function Navbar() {
 
             {/* Rotating Frames */}
             <div className="absolute inset-2 border border-white/20 rounded-md group-hover:border-cyan-400/50 transition-all duration-500 group-hover:rotate-90 group-hover:scale-110" />
-            <div className="absolute inset-2 border border-white/10 rounded-md rotate-45 group-hover:border-indigo-400/50 transition-all duration-700 delay-100 group-hover:rotate-[135deg]" />
+            <div className="absolute inset-2 border border-white/10 rounded-md rotate-45 group-hover:border-indigo-400/50 transition-all duration-700 delay-100 group-hover:rotate-135" />
             
             {/* Kinetic Core */}
             <div className="relative w-1.5 h-1.5 bg-white rounded-full group-hover:bg-cyan-400 transition-all duration-500">
                <div className="absolute inset-0 bg-cyan-400 rounded-full animate-ping opacity-0 group-hover:opacity-100" />
-               <div className="absolute inset-[-4px] border border-cyan-400/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500" />
+               <div className="absolute -inset-1 border border-cyan-400/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500" />
             </div>
           </div>
           <div className="flex flex-col">
@@ -72,70 +71,41 @@ export default function Navbar() {
                 href={link.href}
                 className="group relative py-2 overflow-hidden"
               >
-                <span className="text-[0.7rem] font-medium tracking-[0.2em] text-white/40 uppercase transition-all duration-500 group-hover:text-white group-hover:translate-y-[-2px] block">
+                <span className="text-[0.7rem] font-medium tracking-[0.2em] text-white/40 uppercase transition-all duration-500 group-hover:text-white group-hover:-translate-y-0.5 block">
                   {link.label}
                 </span>
                 {/* Neon Indicator */}
-                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-linear-to-r from-cyan-500 to-indigo-500 translate-x-[-105%] group-hover:translate-x-0 transition-transform duration-500 ease-out shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
+                <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-cyan-500 to-indigo-500 translate-x-[-105%] group-hover:translate-x-0 transition-transform duration-500 ease-out shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
               </Link>
             ))}
           </div>
 
           <a
             href="/Nurulla-Hasan-CV.pdf"
-            className="relative group px-10 py-3 overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-700 glass-card rounded-md flex items-center justify-center min-w-[140px]"
+            className="relative group px-7 py-2 overflow-hidden bg-white hover:bg-[#0a0a0a] border border-white transition-all duration-500"
           >
-            {/* Walking Neon Border SVG */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
-              <rect
-                x="1" y="1" rx="6" ry="6"
-                width="calc(100% - 2px)" height="calc(100% - 2px)"
-                fill="none"
-                stroke="url(#button-grad)"
-                strokeWidth="2"
-                strokeDasharray="20 80"
-                pathLength="100"
-                className="button-walk-path"
-              />
-              <defs>
-                <linearGradient id="button-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#22d3ee" />
-                  <stop offset="100%" stopColor="#818cf8" />
-                </linearGradient>
-              </defs>
-            </svg>
-
-            <span className="relative z-10 text-[0.7rem] font-bold tracking-[0.3em] text-white/50 group-hover:text-white uppercase transition-colors duration-500">
+            <span className="relative z-10 text-[0.65rem] font-bold tracking-[0.3em] text-black group-hover:text-white uppercase transition-colors duration-500">
               Resume
             </span>
-
-            <div className="absolute inset-0 bg-cyan-400/0 group-hover:bg-cyan-400/10 blur-xl transition-all duration-700" />
+            
+            {/* Hover Glow Behind */}
+            <div className="absolute inset-0 bg-cyan-400/0 group-hover:bg-cyan-400/20 blur-2xl transition-all duration-700" />
+            
+            {/* Sliding Background */}
+            <div className="absolute inset-0 bg-[#0a0a0a] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
           </a>
         </nav>
 
         {/* Mobile Menu Toggle (Abstract) */}
         <button className="md:hidden group flex flex-col items-end gap-1.5 p-2 bg-white/5 rounded-lg border border-white/10 glass-card">
-          <span className="w-6 h-[1px] bg-white group-hover:bg-cyan-400 transition-all duration-300"></span>
-          <span className="w-3 h-[1px] bg-white/60 group-hover:w-6 group-hover:bg-indigo-400 transition-all duration-300"></span>
+          <span className="w-6 h-px bg-white group-hover:bg-cyan-400 transition-all duration-300"></span>
+          <span className="w-3 h-px bg-white/60 group-hover:w-6 group-hover:bg-indigo-400 transition-all duration-300"></span>
         </button>
       </div>
 
       <style jsx>{`
         .glass-card {
           backdrop-filter: blur(10px);
-        }
-        @keyframes button-dash {
-          from { stroke-dashoffset: 100; }
-          to { stroke-dashoffset: 0; }
-        }
-        .button-walk-path {
-          animation: button-dash 8s linear infinite;
-          opacity: 0.3;
-        }
-        .group:hover .button-walk-path {
-          opacity: 1;
-          filter: drop-shadow(0 0 5px rgba(34, 211, 238, 0.8));
-          animation-duration: 4s;
         }
       `}</style>
     </header>

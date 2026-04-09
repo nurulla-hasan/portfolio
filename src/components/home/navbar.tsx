@@ -77,27 +77,27 @@ export default function Navbar() {
                   {link.label}
                 </span>
                 {/* Neon Indicator */}
-                <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-primary to-sidebar-primary translate-x-[-105%] group-hover:translate-x-0 transition-transform duration-500 ease-out shadow-[0_0_10px_var(--primary)]" />
+                <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-primary to-sidebar-primary translate-x-[-105%] group-hover:translate-x-0 transition-transform duration-500 ease-out" />
               </Link>
             ))}
           </div>
 
           <a
             href="/Nurulla-Hasan-CV.pdf"
-            className="relative group px-8 py-2.5 overflow-hidden border border-border transition-all duration-700 glass-card"
+            className="relative group px-6 py-2 overflow-hidden border border-border/60 hover:border-primary/50 transition-all duration-700 glass-card"
           >
             {/* Iridescent Shifting Background */}
-            <div className="absolute inset-0 bg-linear-to-r from-destructive/10 via-primary/10 to-sidebar-primary/10 opacity-30 group-hover:opacity-100 transition-opacity duration-700 animate-shimmer scale-150" />
+            <div className="absolute inset-0 bg-linear-to-r from-destructive/10 via-primary/10 to-sidebar-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-shimmer scale-150" />
             
-            <span className="relative z-10 text-[0.7rem] font-black tracking-[0.3em] text-foreground uppercase transition-colors duration-500">
+            <span className="relative z-10 text-[0.65rem] font-bold tracking-[0.25em] text-foreground/80 group-hover:text-primary uppercase transition-colors duration-500">
               Resume
             </span>
 
             {/* Glowing Edge on Hover */}
-            <div className="absolute inset-0 border border-transparent group-hover:border-border transition-all duration-500" />
+            <div className="absolute inset-0 border border-transparent group-hover:border-primary/30 transition-all duration-500" />
             
             {/* Internal Light Streak */}
-            <div className="absolute inset-0 bg-linear-to-r from-transparent via-border/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+            <div className="absolute inset-0 bg-linear-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
           </a>
         </nav>
 

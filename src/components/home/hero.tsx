@@ -152,7 +152,7 @@ export default function Hero() {
         {/* Abstract Background Elements & Neon Walking Circles */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           {/* Huge Right Circle */}
-          <div className="absolute top-[50%] left-[90%] w-[60vw] h-[60vw] -translate-x-1/2 -translate-y-1/2">
+          {/* <div className="absolute top-[50%] left-[92%] w-[60vw] h-[60vw] -translate-x-1/2 -translate-y-1/2 rotate-45">
              <svg className="w-full h-full" viewBox="0 0 1000 1000">
                <defs>
                  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -166,10 +166,10 @@ export default function Hero() {
                <circle cx="500" cy="500" r="498" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="2" />
                <circle cx="500" cy="500" r="498" fill="none" stroke="url(#grad1)" strokeWidth="2.5" className="walk-path-circle-1" strokeLinecap="round" pathLength="200" style={{ filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.4))' }} />
              </svg>
-          </div>
+          </div> */}
           
            {/* Large Left Circle */}
-          <div className="absolute top-[20%] left-[10%] w-[40vw] h-[40vw] -translate-x-1/2 -translate-y-1/2">
+          {/* <div className="absolute top-[0%] left-[0%] w-[38vw] h-[38vw] -translate-x-1/2 -translate-y-1/2 rotate-45">
              <svg className="w-full h-full rotate-180" viewBox="0 0 1000 1000">
                <defs>
                  <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -183,7 +183,7 @@ export default function Hero() {
                <circle cx="500" cy="500" r="498" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="2" />
                <circle cx="500" cy="500" r="498" fill="none" stroke="url(#grad2)" strokeWidth="2.5" className="walk-path-circle-2" strokeLinecap="round" pathLength="150" style={{ filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.4))' }} />
              </svg>
-          </div>
+          </div> */}
 
           {/* Abstract Architectural Mesh (Left-Center) */}
           {/* <div className="absolute top-[53.5%] left-[22%] w-[35vw] h-[35vw] -translate-x-1/2 -translate-y-1/2 opacity-60 pointer-events-none">
@@ -219,27 +219,19 @@ export default function Hero() {
         <div className="hidden lg:block absolute left-24 top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden">
           <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 15s linear infinite' }} />
         </div>
-        
-        {/* <div className="hidden lg:block absolute left-[38%] top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.2s' }}>
-          <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 7s linear infinite 1.5s' }} />
-        </div> */}
 
         <div className="hidden lg:block absolute right-24 top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.4s' }}>
           <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 15s linear infinite 3s' }} />
         </div>
         
         {/* Horizontal intersection lines */}
-        <div className="hidden lg:block absolute left-0 right-0 top-[25%] h-px bg-white/3 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.6s' }}>
+        <div className="hidden lg:block absolute left-0 right-0 top-[25%] h-px bg-white/10 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.6s' }}>
           <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 30s linear infinite 2s' }} />
         </div>
         
-        <div className="hidden lg:block absolute left-0 right-0 top-[75%] h-px bg-white/3 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.8s' }}>
+        <div className="hidden lg:block absolute left-0 right-0 top-[75%] h-px bg-white/10 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.8s' }}>
           <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 30s linear infinite 0s' }} />
         </div>
-
-        {/* Floating crosshair markers (Micro details) */}
-        <div className="absolute left-[calc(40%-4px)] top-[25%] w-2 h-2 text-white/30 text-[10px] items-center justify-center hidden lg:flex font-mono" style={{ animation: 'blink-slow 4s ease-in-out infinite' }}>+</div>
-        <div className="absolute right-31 top-[75%] w-2 h-2 text-white/30 text-[10px] items-center justify-center hidden lg:flex font-mono" style={{ animation: 'blink-slow 5s ease-in-out infinite 1s' }}>+</div>
 
         <section className="max-w-7xl mx-auto px-8 md:px-16 relative z-10 w-full mt-20 sm:mt-0">
           <div className="w-full">
@@ -314,20 +306,19 @@ export default function Hero() {
         </section>
 
         {/* Abstract Scroll Indicator */}
-        <div className="absolute right-8 md:right-14 bottom-0 anim-element" style={{ animationDelay: '0.4s' }}>
+        {/* <div className="absolute right-8 md:right-14 bottom-0 anim-element" style={{ animationDelay: '0.4s' }}>
           <div className="flex flex-col items-center gap-6 pb-12">
             <span className="text-[0.65rem] md:text-[0.7rem] font-bold tracking-[0.4em] uppercase text-white/50 [writing-mode:vertical-rl] transform rotate-180 transition-colors hover:text-white cursor-default">
               Scroll
             </span>
             <div className="w-px h-16 bg-linear-to-b from-white/30 to-transparent" />
           </div>
-        </div>
+        </div> */}
 
         {/* Left Side Technical Metadata & Socials */}
-        <div className="absolute left-8 md:left-14 bottom-0 anim-element hidden sm:block" style={{ animationDelay: '0.5s' }}>
+        {/* <div className="absolute left-8 md:left-14 bottom-0 anim-element hidden sm:block" style={{ animationDelay: '0.5s' }}>
           <div className="flex flex-col items-start gap-10 pb-12">
             
-            {/* Social Links */}
             <div className="flex flex-col gap-8 mb-4">
               <a href="https://github.com/nurullahasan" target="_blank" rel="noopener noreferrer" className="group relative">
                 <span className="text-[0.7rem] font-bold tracking-[0.25em] uppercase text-white/40 group-hover:text-cyan-400 transition-all [writing-mode:vertical-rl] transform rotate-180">
@@ -341,7 +332,6 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Location & Contact Meta */}
             <div className="flex flex-col items-start gap-6">
               <div className="w-px h-16 bg-linear-to-t from-white/30 to-transparent" />
               <div className="flex flex-col gap-4">
@@ -357,7 +347,7 @@ export default function Hero() {
             </div>
 
           </div>
-        </div>
+        </div> */}
       </main>
     </>
   );

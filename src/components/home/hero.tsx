@@ -60,15 +60,15 @@ export default function Hero() {
 
         .anim-line {
           transform-origin: top;
-          animation: line-draw 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+          animation: line-draw 2.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
         }
         .anim-line-h {
           transform-origin: left;
-          animation: line-draw-h 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+          animation: line-draw-h 2.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
         }
         .anim-element {
           opacity: 0;
-          animation: fade-slide 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          animation: fade-slide 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         @keyframes cyber-glitch-1 {
@@ -83,22 +83,24 @@ export default function Hero() {
         .shimmer-text {
           background: linear-gradient(
             90deg,
-            rgba(255, 255, 255, 1) 0%,
-            rgba(255, 255, 255, 0.9) 35%,
-            rgba(34, 211, 238, 0.8) 50%,
-            rgba(255, 255, 255, 0.9) 65%,
-            rgba(255, 255, 255, 1) 100%
+            rgba(255, 100, 100, 0.7) 0%,
+            rgba(255, 255, 150, 0.7) 20%,
+            rgba(150, 255, 150, 0.7) 40%,
+            rgba(150, 255, 255, 0.7) 60%,
+            rgba(150, 150, 255, 0.7) 80%,
+            rgba(255, 255, 255, 1) 90%,
+            rgba(255, 100, 100, 0.7) 100%
           );
           background-size: 200% auto;
           color: transparent;
           -webkit-background-clip: text;
           background-clip: text;
-          animation: text-shimmer-subtle 7s ease-in-out infinite;
+          animation: text-shimmer-subtle 15s linear infinite;
         }
 
         .outline-glitch {
           color: transparent;
-          -webkit-text-stroke: 2px rgba(255, 255, 255, 0.8);
+          -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.6);
           position: relative;
         }
 
@@ -110,32 +112,31 @@ export default function Hero() {
           left: 0;
           width: 100%;
           color: transparent; 
-          -webkit-text-stroke: 2px rgba(255, 255, 255, 1);
           opacity: 0;
           pointer-events: none;
         }
 
         .outline-glitch::before {
           opacity: 1;
-          animation: cyber-glitch-1 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-          -webkit-text-stroke: 2px rgba(255,0,0,0.6);
+          animation: cyber-glitch-1 8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+          -webkit-text-stroke: 1.5px rgba(255, 50, 50, 0.4);
           z-index: 10;
         }
         
         .outline-glitch::after {
           opacity: 1;
-          animation: cyber-glitch-1 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse infinite;
-          -webkit-text-stroke: 2px rgba(34,211,238,0.6);
+          animation: cyber-glitch-1 10s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse infinite;
+          -webkit-text-stroke: 1.5px rgba(34, 211, 238, 0.4);
           z-index: 10;
         }
 
         .walk-path-circle-1 {
-          stroke-dasharray: 2.5 100;
-          animation: svg-walk-circle 15s linear infinite;
+          stroke-dasharray: 4 100;
+          animation: svg-walk-circle 30s linear infinite;
         }
         .walk-path-circle-2 {
-          stroke-dasharray: 2 100;
-          animation: svg-walk-circle-reverse 12s linear infinite;
+          stroke-dasharray: 3 100;
+          animation: svg-walk-circle-reverse 25s linear infinite;
         }
       `}</style>
 
@@ -146,16 +147,34 @@ export default function Hero() {
           {/* Huge Right Circle */}
           <div className="absolute top-[50%] left-[80%] w-[60vw] h-[60vw] -translate-x-1/2 -translate-y-1/2">
              <svg className="w-full h-full" viewBox="0 0 1000 1000">
-               <circle cx="500" cy="500" r="498" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="2" />
-               <circle cx="500" cy="500" r="498" fill="none" stroke="#22d3ee" strokeWidth="1.5" className="walk-path-circle-1" strokeLinecap="round" pathLength="100" style={{ filter: 'drop-shadow(0 0 10px rgba(34,211,238,0.7))' }} />
+               <defs>
+                 <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                   <stop offset="0%" style={{ stopColor: 'rgba(255, 100, 100, 0.5)' }} />
+                   <stop offset="25%" style={{ stopColor: 'rgba(255, 255, 150, 0.5)' }} />
+                   <stop offset="50%" style={{ stopColor: 'rgba(150, 255, 150, 0.5)' }} />
+                   <stop offset="75%" style={{ stopColor: 'rgba(150, 255, 255, 0.5)' }} />
+                   <stop offset="100%" style={{ stopColor: 'rgba(150, 150, 255, 0.5)' }} />
+                 </linearGradient>
+               </defs>
+               <circle cx="500" cy="500" r="498" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="2" />
+               <circle cx="500" cy="500" r="498" fill="none" stroke="url(#grad1)" strokeWidth="2.5" className="walk-path-circle-1" strokeLinecap="round" pathLength="100" style={{ filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.4))' }} />
              </svg>
           </div>
           
           {/* Huge Left Circle */}
           <div className="absolute top-[20%] left-[10%] w-[40vw] h-[40vw] -translate-x-1/2 -translate-y-1/2">
              <svg className="w-full h-full rotate-180" viewBox="0 0 1000 1000">
-               <circle cx="500" cy="500" r="498" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="2" />
-               <circle cx="500" cy="500" r="498" fill="none" stroke="#818cf8" strokeWidth="1.5" className="walk-path-circle-2" strokeLinecap="round" pathLength="100" style={{ filter: 'drop-shadow(0 0 10px rgba(129,140,248,0.7))' }} />
+               <defs>
+                 <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                   <stop offset="0%" style={{ stopColor: 'rgba(150, 150, 255, 0.5)' }} />
+                   <stop offset="25%" style={{ stopColor: 'rgba(150, 255, 255, 0.5)' }} />
+                   <stop offset="50%" style={{ stopColor: 'rgba(150, 255, 150, 0.5)' }} />
+                   <stop offset="75%" style={{ stopColor: 'rgba(255, 255, 150, 0.5)' }} />
+                   <stop offset="100%" style={{ stopColor: 'rgba(255, 100, 100, 0.5)' }} />
+                 </linearGradient>
+               </defs>
+               <circle cx="500" cy="500" r="498" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="2" />
+               <circle cx="500" cy="500" r="498" fill="none" stroke="url(#grad2)" strokeWidth="2.5" className="walk-path-circle-2" strokeLinecap="round" pathLength="100" style={{ filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.4))' }} />
              </svg>
           </div>
           
@@ -164,16 +183,16 @@ export default function Hero() {
         </div>
 
         {/* Architectural grid lines with traveling CYAN light beams */}
-        <div className="hidden lg:block absolute left-24 top-0 bottom-0 w-px bg-white/3 anim-line z-0 overflow-hidden">
-          <div className="absolute left-0 w-px h-37.5 bg-linear-to-b from-transparent via-cyan-400/90 to-transparent blur-[1px] shadow-[0_0_10px_rgba(34,211,238,0.5)]" style={{ animation: 'walk-v 5s linear infinite' }} />
+        <div className="hidden lg:block absolute left-24 top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden">
+          <div className="absolute left-0 w-px h-37.5 bg-linear-to-b from-transparent via-cyan-400/90 to-transparent blur-[1px] shadow-[0_0_15px_rgba(34,211,238,0.7)]" style={{ animation: 'walk-v 5s linear infinite' }} />
         </div>
         
-        <div className="hidden lg:block absolute left-[40%] top-0 bottom-0 w-px bg-white/3 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.2s' }}>
-          <div className="absolute left-0 w-px h-62.5 bg-linear-to-b from-transparent via-indigo-400/80 to-transparent blur-[1px] shadow-[0_0_10px_rgba(129,140,248,0.5)]" style={{ animation: 'walk-v 7s linear infinite 1.5s' }} />
+        <div className="hidden lg:block absolute left-[40%] top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.2s' }}>
+          <div className="absolute left-0 w-px h-62.5 bg-linear-to-b from-transparent via-indigo-400/80 to-transparent blur-[1px] shadow-[0_0_15px_rgba(129,140,248,0.7)]" style={{ animation: 'walk-v 7s linear infinite 1.5s' }} />
         </div>
 
-        <div className="hidden lg:block absolute right-32 top-0 bottom-0 w-px bg-white/3 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.4s' }}>
-          <div className="absolute left-0 w-px h-50 bg-linear-to-b from-transparent via-cyan-300/80 to-transparent blur-[1px] shadow-[0_0_8px_rgba(103,232,249,0.5)]" style={{ animation: 'walk-v 6s linear infinite 3s' }} />
+        <div className="hidden lg:block absolute right-32 top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.4s' }}>
+          <div className="absolute left-0 w-px h-50 bg-linear-to-b from-transparent via-cyan-300/80 to-transparent blur-[1px] shadow-[0_0_12px_rgba(103,232,249,0.7)]" style={{ animation: 'walk-v 6s linear infinite 3s' }} />
         </div>
         
         {/* Horizontal intersection lines */}

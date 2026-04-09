@@ -191,7 +191,7 @@ export default function Hero() {
           <div className="absolute left-0 w-px h-62.5 bg-linear-to-b from-transparent via-indigo-400/80 to-transparent blur-[1px] shadow-[0_0_15px_rgba(129,140,248,0.7)]" style={{ animation: 'walk-v 7s linear infinite 1.5s' }} />
         </div>
 
-        <div className="hidden lg:block absolute right-32 top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.4s' }}>
+        <div className="hidden lg:block absolute right-24 top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.4s' }}>
           <div className="absolute left-0 w-px h-50 bg-linear-to-b from-transparent via-cyan-300/80 to-transparent blur-[1px] shadow-[0_0_12px_rgba(103,232,249,0.7)]" style={{ animation: 'walk-v 6s linear infinite 3s' }} />
         </div>
         
@@ -208,8 +208,8 @@ export default function Hero() {
         <div className="absolute left-[calc(40%-4px)] top-[25%] w-2 h-2 text-white/30 text-[10px] items-center justify-center hidden lg:flex font-mono" style={{ animation: 'blink-slow 4s ease-in-out infinite' }}>+</div>
         <div className="absolute right-31 top-[75%] w-2 h-2 text-white/30 text-[10px] items-center justify-center hidden lg:flex font-mono" style={{ animation: 'blink-slow 5s ease-in-out infinite 1s' }}>+</div>
 
-        <section className="container mx-auto px-8 md:px-16 relative z-10 w-full mt-20 sm:mt-0">
-          <div className="max-w-5xl lg:ml-[calc(40%-4rem)]">
+        <section className="max-w-7xl mx-auto px-8 md:px-16 relative z-10 w-full mt-20 sm:mt-0">
+          <div className="w-full lg:ml-[calc(40%-4rem)]">
             
             <div className="anim-element flex items-center gap-4 mb-8 md:mb-12">
               <span className="w-8 md:w-12 h-px bg-white/20 block" />
@@ -281,7 +281,7 @@ export default function Hero() {
         </section>
 
         {/* Abstract Scroll Indicator */}
-        <div className="absolute right-8 md:right-16 bottom-0 anim-element" style={{ animationDelay: '0.4s' }}>
+        <div className="absolute right-8 md:right-14 bottom-0 anim-element" style={{ animationDelay: '0.4s' }}>
           <div className="flex flex-col items-center gap-4 pb-12">
             <span className="text-[0.55rem] font-medium tracking-[0.3em] uppercase text-white/30 rotate-90 origin-bottom translate-y-6">
               Scroll

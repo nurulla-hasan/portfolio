@@ -87,24 +87,22 @@ export default function Hero() {
         .shimmer-text {
           background: linear-gradient(
             90deg,
-            rgba(255, 100, 100, 0.7) 0%,
-            rgba(255, 255, 150, 0.7) 20%,
-            rgba(150, 255, 150, 0.7) 40%,
-            rgba(150, 255, 255, 0.7) 60%,
-            rgba(150, 150, 255, 0.7) 80%,
-            rgba(255, 255, 255, 1) 90%,
-            rgba(255, 100, 100, 0.7) 100%
+            var(--destructive) 0%,
+            var(--sidebar-primary) 25%,
+            var(--foreground) 50%,
+            var(--sidebar-primary) 75%,
+            var(--destructive) 100%
           );
           background-size: 200% auto;
           color: transparent;
           -webkit-background-clip: text;
           background-clip: text;
-          animation: text-shimmer-subtle 15s linear infinite;
+          animation: text-shimmer-subtle 30s linear infinite;
         }
 
         .outline-glitch {
           color: transparent;
-          -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.6);
+          -webkit-text-stroke: 1.5px var(--border);
           position: relative;
         }
 
@@ -123,14 +121,14 @@ export default function Hero() {
         .outline-glitch::before {
           opacity: 1;
           animation: cyber-glitch-1 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-          -webkit-text-stroke: 2px rgba(255, 50, 50, 0.8);
+          -webkit-text-stroke: 2px var(--destructive);
           z-index: 10;
         }
         
         .outline-glitch::after {
           opacity: 1;
           animation: cyber-glitch-1 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse infinite;
-          -webkit-text-stroke: 2px rgba(34, 211, 238, 0.8);
+          -webkit-text-stroke: 2px var(--primary);
           z-index: 10;
         }
 
@@ -147,7 +145,7 @@ export default function Hero() {
         }
       `}</style>
 
-      <main className="relative flex min-h-screen w-full items-center bg-[#0a0a0a] overflow-hidden selection:bg-white/20">
+      <main className="relative flex min-h-screen w-full items-center bg-background overflow-hidden selection:bg-primary/20">
         
         {/* Abstract Background Elements & Neon Walking Circles */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -216,29 +214,29 @@ export default function Hero() {
         </div>
 
         {/* Architectural grid lines with traveling CYAN light beams */}
-        <div className="hidden lg:block absolute left-24 top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden">
-          <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 15s linear infinite' }} />
+        <div className="hidden lg:block absolute left-24 top-0 bottom-0 w-px bg-border anim-line z-0 overflow-hidden">
+          <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 20s linear infinite' }} />
         </div>
 
-        <div className="hidden lg:block absolute right-24 top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.4s' }}>
-          <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 15s linear infinite 3s' }} />
+        <div className="hidden lg:block absolute right-24 top-0 bottom-0 w-px bg-border anim-line z-0 overflow-hidden" style={{ animationDelay: '0.4s' }}>
+          <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 20s linear infinite 3s' }} />
         </div>
         
         {/* Horizontal intersection lines */}
-        <div className="hidden lg:block absolute left-0 right-0 top-[25%] h-px bg-white/10 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.6s' }}>
-          <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 30s linear infinite 2s' }} />
+        <div className="hidden lg:block absolute left-0 right-0 top-[12%] h-px bg-border/50 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.6s' }}>
+          <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 40s linear infinite 2s' }} />
         </div>
         
-        <div className="hidden lg:block absolute left-0 right-0 top-[75%] h-px bg-white/10 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.8s' }}>
-          <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 30s linear infinite 0s' }} />
+        <div className="hidden lg:block absolute left-0 right-0 top-[88%] h-px bg-border/50 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.8s' }}>
+          <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 40s linear infinite 0s' }} />
         </div>
 
         <section className="max-w-7xl mx-auto px-8 md:px-16 relative z-10 w-full mt-20 sm:mt-0">
           <div className="w-full">
             
             <div className="anim-element flex items-center gap-4 mb-8 md:mb-12">
-              <span className="w-8 md:w-12 h-px bg-white/20 block" />
-              <span className="text-[0.55rem] md:text-[0.65rem] font-medium tracking-[0.4em] text-white/40 uppercase">
+              <span className="w-8 md:w-12 h-px bg-border block" />
+              <span className="text-[0.55rem] md:text-[0.65rem] font-medium tracking-[0.4em] text-muted-foreground uppercase">
                 Portfolio &apos;26
               </span>
             </div>
@@ -248,7 +246,7 @@ export default function Hero() {
               style={{ animationDelay: '0.1s' }}
             >
               <span className="block text-[clamp(4.5rem,12vw,6.5rem)] lg:text-[clamp(5.5rem,8vw,10rem)] leading-[0.95] font-extrabold tracking-tighter uppercase w-full wrap-break-word">
-                <span className="shimmer-text block w-full drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">Nurulla</span>
+                <span className="shimmer-text block w-full drop-shadow-[0_0_15px_var(--primary-foreground)]">Nurulla</span>
               </span>
               <span className="block text-[clamp(4.5rem,12vw,6.5rem)] lg:text-[clamp(5.5rem,8vw,10rem)] leading-[0.8] font-bold tracking-tight uppercase w-full wrap-break-word">
                 <span className="outline-glitch block w-full" data-text="Hasan">Hasan</span>
@@ -256,47 +254,47 @@ export default function Hero() {
             </h1>
 
             <div className="anim-element mt-10 md:mt-12 grid lg:grid-cols-[1fr_1.2fr] gap-10 md:gap-12 items-start relative z-10 w-full" style={{ animationDelay: '0.2s' }}>
-              <p className="text-[0.85rem] md:text-[0.95rem] font-light leading-relaxed text-white/40 max-w-full lg:max-w-sm">
+              <p className="text-[0.85rem] md:text-[0.95rem] font-light leading-relaxed text-muted-foreground max-w-full lg:max-w-sm">
                 A minimalistic approach to engineering. Specializing in highly optimized, mathematically precise frontend experiences using the MERN stack. I build interfaces that feel alive, combining structural robustness with fluid motion.
               </p>
 
-              <div className="flex flex-col gap-8 md:gap-10 items-start lg:border-l border-white/5 lg:pl-10 mt-4 lg:mt-0 w-full">
+              <div className="flex flex-col gap-8 md:gap-10 items-start lg:border-l border-border/50 lg:pl-10 mt-4 lg:mt-0 w-full">
                 {/* Expanded Micro-Stats / Info Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 md:gap-y-8 w-full max-w-full">
                   <div className="flex flex-col gap-2">
-                    <span className="text-[0.55rem] md:text-[0.6rem] tracking-[0.2em] text-white/30 uppercase flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" /> Focus
+                    <span className="text-[0.55rem] md:text-[0.6rem] tracking-[0.2em] text-muted-foreground uppercase flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" /> Focus
                     </span>
-                    <span className="text-[0.8rem] md:text-sm font-medium text-white/70 tracking-wide">React / Next.js / UX</span>
+                    <span className="text-[0.8rem] md:text-sm font-medium text-foreground/70 tracking-wide">React / Next.js / UX</span>
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <span className="text-[0.55rem] md:text-[0.6rem] tracking-[0.2em] text-white/30 uppercase flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" /> Status
+                    <span className="text-[0.55rem] md:text-[0.6rem] tracking-[0.2em] text-muted-foreground uppercase flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary/80 animate-pulse" /> Status
                     </span>
-                    <span className="text-[0.8rem] md:text-sm font-medium text-white/70 tracking-wide">Available for Work</span>
+                    <span className="text-[0.8rem] md:text-sm font-medium text-foreground/70 tracking-wide">Available for Work</span>
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <span className="text-[0.55rem] md:text-[0.6rem] tracking-[0.2em] text-white/30 uppercase">Experience</span>
-                    <span className="text-[1rem] md:text-[1.1rem] font-semibold text-white/90">2+ Years</span>
+                    <span className="text-[0.55rem] md:text-[0.6rem] tracking-[0.2em] text-muted-foreground uppercase">Experience</span>
+                    <span className="text-[1rem] md:text-[1.1rem] font-semibold text-foreground">2+ Years</span>
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <span className="text-[0.55rem] md:text-[0.6rem] tracking-[0.2em] text-white/30 uppercase">Projects Delivered</span>
-                    <span className="text-[1rem] md:text-[1.1rem] font-semibold text-white/90">40+ Digital Assets</span>
+                    <span className="text-[0.55rem] md:text-[0.6rem] tracking-[0.2em] text-muted-foreground uppercase">Projects Delivered</span>
+                    <span className="text-[1rem] md:text-[1.1rem] font-semibold text-foreground">40+ Digital Assets</span>
                   </div>
                 </div>
                 
                 <Link 
                   href="#projects" 
-                  className="group flex items-center gap-4 border-b border-white/20 pb-2 hover:border-cyan-400 transition-colors"
+                  className="group flex items-center gap-4 border-b border-border pb-2 hover:border-primary transition-colors"
                 >
-                  <span className="text-[0.75rem] font-medium tracking-[0.2em] uppercase text-white group-hover:text-cyan-300 transition-colors">
+                  <span className="text-[0.75rem] font-medium tracking-[0.2em] uppercase text-foreground group-hover:text-primary transition-colors">
                     Explore Ecosystem
                   </span>
                   <div className="relative overflow-hidden w-6 h-6 flex items-center justify-center">
-                    <ArrowRight className="w-4 h-4 text-white/50 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
                   </div>
                 </Link>
               </div>
@@ -308,10 +306,10 @@ export default function Hero() {
         {/* Abstract Scroll Indicator */}
         {/* <div className="absolute right-8 md:right-14 bottom-0 anim-element" style={{ animationDelay: '0.4s' }}>
           <div className="flex flex-col items-center gap-6 pb-12">
-            <span className="text-[0.65rem] md:text-[0.7rem] font-bold tracking-[0.4em] uppercase text-white/50 [writing-mode:vertical-rl] transform rotate-180 transition-colors hover:text-white cursor-default">
+            <span className="text-[0.65rem] md:text-[0.7rem] font-bold tracking-[0.4em] uppercase text-muted-foreground [writing-mode:vertical-rl] transform rotate-180 transition-colors hover:text-foreground cursor-default">
               Scroll
             </span>
-            <div className="w-px h-16 bg-linear-to-b from-white/30 to-transparent" />
+            <div className="w-px h-16 bg-gradient-to-b from-border to-transparent" />
           </div>
         </div> */}
 
@@ -321,25 +319,25 @@ export default function Hero() {
             
             <div className="flex flex-col gap-8 mb-4">
               <a href="https://github.com/nurullahasan" target="_blank" rel="noopener noreferrer" className="group relative">
-                <span className="text-[0.7rem] font-bold tracking-[0.25em] uppercase text-white/40 group-hover:text-cyan-400 transition-all [writing-mode:vertical-rl] transform rotate-180">
+                <span className="text-[0.7rem] font-bold tracking-[0.25em] uppercase text-muted-foreground/80 group-hover:text-primary transition-all [writing-mode:vertical-rl] transform rotate-180">
                   GitHub
                 </span>
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="group relative">
-                <span className="text-[0.7rem] font-bold tracking-[0.25em] uppercase text-white/40 group-hover:text-indigo-400 transition-all [writing-mode:vertical-rl] transform rotate-180">
+                <span className="text-[0.7rem] font-bold tracking-[0.25em] uppercase text-muted-foreground/80 group-hover:text-primary transition-all [writing-mode:vertical-rl] transform rotate-180">
                   LinkedIn
                 </span>
               </a>
             </div>
 
             <div className="flex flex-col items-start gap-6">
-              <div className="w-px h-16 bg-linear-to-t from-white/30 to-transparent" />
+              <div className="w-px h-16 bg-gradient-to-t from-border to-transparent" />
               <div className="flex flex-col gap-4">
-                <span className="text-[0.6rem] font-black tracking-[0.4em] uppercase text-white/50 [writing-mode:vertical-rl] transform rotate-180 mb-2">
+                <span className="text-[0.6rem] font-black tracking-[0.4em] uppercase text-muted-foreground [writing-mode:vertical-rl] transform rotate-180 mb-2">
                   Dhaka, Bangladesh
                 </span>
                 <a href="mailto:nurullahasan.dev@gmail.com" className="group/mail relative cursor-pointer">
-                  <span className="text-[0.55rem] font-bold tracking-[0.25em] uppercase text-white/60 group-hover/mail:text-cyan-400 transition-all [writing-mode:vertical-rl] transform rotate-180">
+                  <span className="text-[0.55rem] font-bold tracking-[0.25em] uppercase text-muted-foreground group-hover/mail:text-primary transition-all [writing-mode:vertical-rl] transform rotate-180">
                     nurullahasan.dev@gmail.com
                   </span>
                 </a>

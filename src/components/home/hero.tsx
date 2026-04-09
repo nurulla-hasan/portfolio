@@ -144,8 +144,7 @@ export default function Hero() {
           animation: slow-rotate 60s linear infinite;
         }
       `}</style>
-
-      <main className="relative flex min-h-screen w-full items-center bg-background overflow-hidden selection:bg-primary/20">
+      <main className="relative flex min-h-screen w-full items-center bg-transparent overflow-hidden selection:bg-primary/20">
         
         {/* Abstract Background Elements & Neon Walking Circles */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -213,16 +212,7 @@ export default function Hero() {
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03]" />
         </div>
 
-        {/* Architectural grid lines with traveling CYAN light beams */}
-        <div className="hidden lg:block absolute left-24 top-0 bottom-0 w-px bg-border anim-line z-0 overflow-hidden">
-          <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 20s linear infinite' }} />
-        </div>
-
-        <div className="hidden lg:block absolute right-24 top-0 bottom-0 w-px bg-border anim-line z-0 overflow-hidden" style={{ animationDelay: '0.4s' }}>
-          <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 20s linear infinite 3s' }} />
-        </div>
-        
-        {/* Horizontal intersection lines */}
+          {/* Horizontal intersection lines */}
         <div className="hidden lg:block absolute left-0 right-0 top-[12%] h-px bg-border/50 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.6s' }}>
           <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 40s linear infinite 2s' }} />
         </div>

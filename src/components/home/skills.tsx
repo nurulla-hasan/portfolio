@@ -70,7 +70,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative flex min-h-screen w-full items-center bg-background overflow-hidden"
+      className="relative flex min-h-screen w-full items-center bg-transparent overflow-hidden"
     >
       <style suppressHydrationWarning>{`
         .outline-wipe {
@@ -104,28 +104,14 @@ export default function Skills() {
         }
       `}</style>
 
-      {/* Vertical Lines */}
-      <div className="hidden lg:block absolute left-24 top-0 bottom-0 w-px bg-border/50 overflow-hidden">
-        <div
-          className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary"
-          style={{ animation: "walk-v 20s linear infinite 2s" }}
-        />
-      </div>
-      <div className="hidden lg:block absolute right-24 top-0 bottom-0 w-px bg-border/50 overflow-hidden">
-        <div
-          className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary"
-          style={{ animation: "walk-v 20s linear infinite 7s" }}
-        />
-      </div>
-
       {/* Abstract Horizontal Intersections */}
-      <div className="hidden lg:block absolute left-0 right-0 top-[10%] h-px bg-border/30 overflow-hidden">
+      <div className="hidden lg:block absolute left-0 right-0 top-[10%] h-px bg-border/30 overflow-hidden z-0 pointer-events-none">
         <div
           className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary"
           style={{ animation: "walk-h 30s linear infinite 10s" }}
         />
       </div>
-      <div className="hidden lg:block absolute left-0 right-0 bottom-[10%] h-px bg-border/30 overflow-hidden">
+      <div className="hidden lg:block absolute left-0 right-0 bottom-[10%] h-px bg-border/30 overflow-hidden z-0 pointer-events-none">
         <div
           className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary"
           style={{ animation: "walk-h 30s linear infinite 1s" }}

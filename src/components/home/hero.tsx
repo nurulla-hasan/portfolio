@@ -186,7 +186,7 @@ export default function Hero() {
           </div>
 
           {/* Abstract Architectural Mesh (Left-Center) */}
-          <div className="absolute top-[53.5%] left-[22%] w-[35vw] h-[35vw] -translate-x-1/2 -translate-y-1/2 opacity-60 pointer-events-none">
+          {/* <div className="absolute top-[53.5%] left-[22%] w-[35vw] h-[35vw] -translate-x-1/2 -translate-y-1/2 opacity-60 pointer-events-none">
             <svg viewBox="0 0 400 400" className="w-full h-full animate-slow-rotate">
               <defs>
                 <linearGradient id="mesh-grad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -204,13 +204,12 @@ export default function Hero() {
                 <circle cx="200" cy="200" r="100" />
                 <path d="M 50,200 L 350,200 M 200,50 L 200,350" strokeDasharray="5 5" opacity="0.6" />
                 <rect x="100" y="100" width="200" height="200" strokeDasharray="15 15" transform="rotate(25 200 200)" />
-                {/* Additional Technical Accents */}
                 <circle cx="200" cy="200" r="5" fill="#22d3ee" />
                 <rect x="195" y="45" width="10" height="10" stroke="#22d3ee" strokeWidth="0.5" />
                 <rect x="195" y="345" width="10" height="10" stroke="#818cf8" strokeWidth="0.5" />
               </g>
             </svg>
-          </div>
+          </div> */}
           
           {/* Grain */ }
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03]" />
@@ -218,24 +217,24 @@ export default function Hero() {
 
         {/* Architectural grid lines with traveling CYAN light beams */}
         <div className="hidden lg:block absolute left-24 top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden">
-          <div className="absolute left-0 w-px h-37.5 bg-linear-to-b from-transparent via-cyan-400/90 to-transparent blur-[1px] shadow-[0_0_15px_rgba(34,211,238,0.7)]" style={{ animation: 'walk-v 5s linear infinite' }} />
+          <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 15s linear infinite' }} />
         </div>
         
         <div className="hidden lg:block absolute left-[38%] top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.2s' }}>
-          <div className="absolute left-0 w-px h-62.5 bg-linear-to-b from-transparent via-indigo-400/80 to-transparent blur-[1px] shadow-[0_0_15px_rgba(129,140,248,0.7)]" style={{ animation: 'walk-v 7s linear infinite 1.5s' }} />
+          <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 7s linear infinite 1.5s' }} />
         </div>
 
         <div className="hidden lg:block absolute right-24 top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.4s' }}>
-          <div className="absolute left-0 w-px h-50 bg-linear-to-b from-transparent via-cyan-300/80 to-transparent blur-[1px] shadow-[0_0_12px_rgba(103,232,249,0.7)]" style={{ animation: 'walk-v 6s linear infinite 3s' }} />
+          <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 6s linear infinite 3s' }} />
         </div>
         
         {/* Horizontal intersection lines */}
         <div className="hidden lg:block absolute left-0 right-0 top-[25%] h-px bg-white/3 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.6s' }}>
-          <div className="absolute top-0 h-px w-50 bg-linear-to-r from-transparent via-cyan-400/90 to-transparent blur-[1px] shadow-[0_0_10px_rgba(34,211,238,0.5)]" style={{ animation: 'walk-h 8s linear infinite 2s' }} />
+          <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 8s linear infinite 2s' }} />
         </div>
         
         <div className="hidden lg:block absolute left-0 right-0 top-[75%] h-px bg-white/3 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.8s' }}>
-          <div className="absolute top-0 h-px w-75 bg-linear-to-r from-transparent via-indigo-300/80 to-transparent blur-[1px]" style={{ animation: 'walk-h 10s linear infinite 0s' }} />
+          <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 10s linear infinite 0s' }} />
         </div>
 
         {/* Floating crosshair markers (Micro details) */}
@@ -243,7 +242,7 @@ export default function Hero() {
         <div className="absolute right-31 top-[75%] w-2 h-2 text-white/30 text-[10px] items-center justify-center hidden lg:flex font-mono" style={{ animation: 'blink-slow 5s ease-in-out infinite 1s' }}>+</div>
 
         <section className="max-w-7xl mx-auto px-8 md:px-16 relative z-10 w-full mt-20 sm:mt-0">
-          <div className="w-full lg:ml-[calc(40%-4rem)]">
+          <div className="w-full">
             
             <div className="anim-element flex items-center gap-4 mb-8 md:mb-12">
               <span className="w-8 md:w-12 h-px bg-white/20 block" />

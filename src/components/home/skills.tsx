@@ -72,6 +72,37 @@ export default function Skills() {
       id="skills"
       className="relative flex min-h-screen w-full items-center bg-background overflow-hidden"
     >
+      <style suppressHydrationWarning>{`
+        .outline-wipe {
+          color: transparent;
+          -webkit-text-stroke: 1px var(--border);
+          position: relative;
+          display: inline-block;
+        }
+        .outline-wipe::before, .outline-wipe::after {
+          content: attr(data-text);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          color: transparent;
+          pointer-events: none;
+        }
+        .outline-wipe::before {
+          -webkit-text-stroke: 1.5px var(--sidebar-primary);
+          filter: drop-shadow(0 0 6px var(--sidebar-primary));
+          animation: laser-wipe 4.5s ease-in-out infinite;
+        }
+        .outline-wipe::after {
+          -webkit-text-stroke: 1.5px var(--primary);
+          filter: drop-shadow(0 0 6px var(--primary));
+          animation: laser-wipe 4.5s ease-in-out infinite 0.2s;
+        }
+        @keyframes laser-wipe {
+          0%, 15% { clip-path: polygon(-20% 0, -5% 0, -15% 100%, -30% 100%); }
+          85%, 100% { clip-path: polygon(120% 0, 135% 0, 125% 100%, 110% 100%); }
+        }
+      `}</style>
 
       {/* Vertical Lines */}
       <div className="hidden lg:block absolute left-24 top-0 bottom-0 w-px bg-border/50 overflow-hidden">
@@ -115,8 +146,8 @@ export default function Skills() {
             <h2
               className={`${uniqueFont.className} text-[clamp(2rem,3.5vw,3.5rem)] leading-none font-extrabold tracking-tighter uppercase text-foreground`}
             >
-              System <br />
-              <span className="text-muted-foreground line-through decoration-primary/50">
+              <span className="shimmer-text block mb-1 drop-shadow-[0_0_15px_var(--primary-foreground)]">System</span>
+              <span className="outline-wipe mt-2 block" data-text="Architecture">
                 Architecture
               </span>
             </h2>

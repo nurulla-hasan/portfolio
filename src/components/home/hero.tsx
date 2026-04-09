@@ -187,7 +187,7 @@ export default function Hero() {
           <div className="absolute left-0 w-px h-37.5 bg-linear-to-b from-transparent via-cyan-400/90 to-transparent blur-[1px] shadow-[0_0_15px_rgba(34,211,238,0.7)]" style={{ animation: 'walk-v 5s linear infinite' }} />
         </div>
         
-        <div className="hidden lg:block absolute left-[40%] top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.2s' }}>
+        <div className="hidden lg:block absolute left-[38%] top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.2s' }}>
           <div className="absolute left-0 w-px h-62.5 bg-linear-to-b from-transparent via-indigo-400/80 to-transparent blur-[1px] shadow-[0_0_15px_rgba(129,140,248,0.7)]" style={{ animation: 'walk-v 7s linear infinite 1.5s' }} />
         </div>
 

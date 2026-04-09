@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Geist_Mono, Manrope, Syne } from "next/font/google";
+import { Comic_Neue, Cormorant_Garamond, Geist_Mono, Syne } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme-provider";
 
-const manrope = Manrope({
+const comicNeue = Comic_Neue({
   subsets: ["latin"],
+  weight: ["300", "400", "700"],
   display: "swap",
   variable: "--font-sans",
 })
@@ -47,7 +48,7 @@ export default function RootLayout({
       className={cn(
         "h-full",
         "antialiased",
-        manrope.variable,
+        comicNeue.variable,
         syne.variable,
         cormorant.variable,
         geistMono.variable,

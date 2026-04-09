@@ -1,8 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Oswald } from "next/font/google";
+import { Borel } from "next/font/google";
 
-const uniqueFont = Oswald({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+const uniqueFont = Borel({ subsets: ["latin"], weight: ["400"] });
 
 export default function Hero() {
   return (
@@ -81,7 +81,7 @@ export default function Hero() {
         }
         .outline-text::after {
           /* Add a tiny subtle glow to the outline */
-          content: 'Hasan.';
+          content: 'Hasan';
           position: absolute;
           left: 0;
           top: 0;
@@ -162,11 +162,11 @@ export default function Hero() {
             </div>
 
             <h1 className={`anim-element relative z-10 ${uniqueFont.className} w-full`} style={{ animationDelay: '0.1s' }}>
-              <span className="block text-[clamp(2.5rem,10vw,5rem)] lg:text-[clamp(4.5rem,8vw,9rem)] leading-[0.95] font-bold tracking-tight text-white mb-2 md:mb-4 w-full wrap-break-word">
-                <span className="shimmer-text drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] uppercase block w-full">Nurulla</span>
+              <span className="block text-[clamp(3.5rem,12vw,5.5rem)] lg:text-[clamp(5rem,10vw,8.5rem)] leading-[0.95] tracking-tight text-white mb-2 md:mb-4 w-full wrap-break-word">
+                <span className="shimmer-text drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] block w-full pl-2">Nurulla</span>
               </span>
-              <span className="block text-[clamp(2.5rem,10vw,5rem)] lg:text-[clamp(4.5rem,8vw,9rem)] leading-[0.9] font-medium tracking-wide text-white w-full wrap-break-word">
-                <span className="outline-text uppercase block w-full">Hasan.</span>
+              <span className="block text-[clamp(3.5rem,12vw,5.5rem)] lg:text-[clamp(5rem,10vw,8.5rem)] leading-[0.9] tracking-tight text-white w-full wrap-break-word">
+                <span className="outline-text block w-full pl-2">Hasan</span>
               </span>
             </h1>
 

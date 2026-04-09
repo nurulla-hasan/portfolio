@@ -76,9 +76,9 @@ export default function About() {
               </span>
             </div>
 
-            <h2 className={`${uniqueFont.className} text-[clamp(2.5rem,4vw,3rem)] leading-[1.05] font-semibold tracking-widest uppercase text-foreground mb-6`}>
-              <span className="block mb-2">Frontend-focused</span>
-              <span className="block outline-scan" data-text="MERN Engineer">
+            <h2 className={`${uniqueFont.className} text-[clamp(2.5rem,4vw,4rem)] leading-[1.05] font-semibold tracking-widest uppercase text-foreground mb-6`}>
+              <span className="shimmer-text block mb-2 drop-shadow-[0_0_15px_var(--primary-foreground)]">Frontend Focused</span>
+              <span className="block outline-scan text-[clamp(2.5rem,4vw,3rem)]" data-text="MERN Engineer">
                 MERN Engineer
               </span>
             </h2>
@@ -111,7 +111,7 @@ export default function About() {
             {/* Ambient Background Glowing Orbs */}
             <div className="absolute inset-0 bg-linear-to-tr from-primary/5 to-transparent rounded-3xl opacity-50 border border-border/20" />
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 blur-[60px] rounded-full" />
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-destructive/10 blur-[60px] rounded-full" />
+            <div className="absolute -bottom-10 -left-10 w-70 h-70 bg-destructive/10 blur-[60px] rounded-full" />
 
             {/* Glass Terminal Interface */}
             <div className="relative z-10 w-full p-8 md:p-10 rounded-2xl border border-border/60 flex flex-col gap-8 shadow-2xl backdrop-blur-xl bg-background/40">

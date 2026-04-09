@@ -82,17 +82,20 @@ export default function Navbar() {
 
           <a
             href="/Nurulla-Hasan-CV.pdf"
-            className="relative group px-7 py-2 overflow-hidden bg-white hover:bg-[#0a0a0a] border border-white transition-all duration-500"
+            className="relative group px-8 py-2.5 overflow-hidden border border-white/20 transition-all duration-700 glass-card"
           >
-            <span className="relative z-10 text-[0.65rem] font-bold tracking-[0.3em] text-black group-hover:text-white uppercase transition-colors duration-500">
+            {/* Iridescent Shifting Background */}
+            <div className="absolute inset-0 bg-linear-to-r from-red-500/10 via-yellow-500/10 to-blue-500/10 opacity-30 group-hover:opacity-100 transition-opacity duration-700 animate-shimmer scale-150" />
+            
+            <span className="relative z-10 text-[0.7rem] font-black tracking-[0.3em] text-white group-hover:text-white uppercase transition-colors duration-500">
               Resume
             </span>
+
+            {/* Glowing Edge on Hover */}
+            <div className="absolute inset-0 border border-white/0 group-hover:border-white/40 transition-all duration-500" />
             
-            {/* Hover Glow Behind */}
-            <div className="absolute inset-0 bg-cyan-400/0 group-hover:bg-cyan-400/20 blur-2xl transition-all duration-700" />
-            
-            {/* Sliding Background */}
-            <div className="absolute inset-0 bg-[#0a0a0a] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out" />
+            {/* Internal Light Streak */}
+            <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
           </a>
         </nav>
 
@@ -105,7 +108,16 @@ export default function Navbar() {
 
       <style jsx>{`
         .glass-card {
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(15px);
+          background: rgba(255, 255, 255, 0.03);
+        }
+        @keyframes shimmer-slow {
+          0% { background-position: -200% 0; }
+          100% { background-position: 200% 0; }
+        }
+        .animate-shimmer {
+          background-size: 300% 100%;
+          animation: shimmer-slow 15s linear infinite;
         }
       `}</style>
     </header>

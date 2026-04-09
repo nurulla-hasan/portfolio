@@ -195,9 +195,11 @@ export default function Hero() {
                 </linearGradient>
               </defs>
               <g fill="none" stroke="url(#mesh-grad)" strokeWidth="1" style={{ filter: 'drop-shadow(0 0 8px rgba(34,211,238,0.4))' }}>
-                {[...Array(12)].map((_, i) => (
-                  <path key={i} d={`M ${200 + 150 * Math.cos(i * Math.PI / 6)},${200 + 150 * Math.sin(i * Math.PI / 6)} L 200,200`} />
-                ))}
+                {[...Array(12)].map((_, i) => {
+                  const x = (200 + 150 * Math.cos(i * Math.PI / 6)).toFixed(3);
+                  const y = (200 + 150 * Math.sin(i * Math.PI / 6)).toFixed(3);
+                  return <path key={i} d={`M ${x},${y} L 200,200`} />;
+                })}
                 <circle cx="200" cy="200" r="152" strokeDasharray="10 20" />
                 <circle cx="200" cy="200" r="100" />
                 <path d="M 50,200 L 350,200 M 200,50 L 200,350" strokeDasharray="5 5" opacity="0.6" />
@@ -347,9 +349,11 @@ export default function Hero() {
                 <span className="text-[0.6rem] font-black tracking-[0.4em] uppercase text-white/50 [writing-mode:vertical-rl] transform rotate-180 mb-2">
                   Dhaka, Bangladesh
                 </span>
-                <span className="text-[0.55rem] font-bold tracking-[0.25em] uppercase text-white/30 [writing-mode:vertical-rl] transform rotate-180">
-                  nurullahasan.dev@gmail.com
-                </span>
+                <a href="mailto:nurullahasan.dev@gmail.com" className="group/mail relative cursor-pointer">
+                  <span className="text-[0.55rem] font-bold tracking-[0.25em] uppercase text-white/60 group-hover/mail:text-cyan-400 transition-all [writing-mode:vertical-rl] transform rotate-180">
+                    nurullahasan.dev@gmail.com
+                  </span>
+                </a>
               </div>
             </div>
 

@@ -152,7 +152,7 @@ export default function Hero() {
         {/* Abstract Background Elements & Neon Walking Circles */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           {/* Huge Right Circle */}
-          <div className="absolute top-[50%] left-[80%] w-[60vw] h-[60vw] -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute top-[50%] left-[90%] w-[60vw] h-[60vw] -translate-x-1/2 -translate-y-1/2">
              <svg className="w-full h-full" viewBox="0 0 1000 1000">
                <defs>
                  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -164,7 +164,7 @@ export default function Hero() {
                  </linearGradient>
                </defs>
                <circle cx="500" cy="500" r="498" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="2" />
-               <circle cx="500" cy="500" r="498" fill="none" stroke="url(#grad1)" strokeWidth="2.5" className="walk-path-circle-1" strokeLinecap="round" pathLength="100" style={{ filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.4))' }} />
+               <circle cx="500" cy="500" r="498" fill="none" stroke="url(#grad1)" strokeWidth="2.5" className="walk-path-circle-1" strokeLinecap="round" pathLength="200" style={{ filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.4))' }} />
              </svg>
           </div>
           
@@ -181,7 +181,7 @@ export default function Hero() {
                  </linearGradient>
                </defs>
                <circle cx="500" cy="500" r="498" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="2" />
-               <circle cx="500" cy="500" r="498" fill="none" stroke="url(#grad2)" strokeWidth="2.5" className="walk-path-circle-2" strokeLinecap="round" pathLength="100" style={{ filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.4))' }} />
+               <circle cx="500" cy="500" r="498" fill="none" stroke="url(#grad2)" strokeWidth="2.5" className="walk-path-circle-2" strokeLinecap="round" pathLength="150" style={{ filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.4))' }} />
              </svg>
           </div>
 
@@ -230,11 +230,11 @@ export default function Hero() {
         
         {/* Horizontal intersection lines */}
         <div className="hidden lg:block absolute left-0 right-0 top-[25%] h-px bg-white/3 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.6s' }}>
-          <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 8s linear infinite 2s' }} />
+          <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 30s linear infinite 2s' }} />
         </div>
         
         <div className="hidden lg:block absolute left-0 right-0 top-[75%] h-px bg-white/3 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.8s' }}>
-          <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 10s linear infinite 0s' }} />
+          <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 30s linear infinite 0s' }} />
         </div>
 
         {/* Floating crosshair markers (Micro details) */}

@@ -1,8 +1,10 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Borel } from "next/font/google";
+import { Outfit } from "next/font/google";
 
-const uniqueFont = Borel({ subsets: ["latin"], weight: ["400"] });
+const uniqueFont = Outfit({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 
 export default function Hero() {
   return (
@@ -36,6 +38,17 @@ export default function Hero() {
           0%, 100% { opacity: 0.2; }
           50% { opacity: 0.8; }
         }
+        @keyframes horror-flicker {
+          0%, 100% { opacity: 1; }
+          32% { opacity: 1; }
+          33% { opacity: 0; }
+          34% { opacity: 0.8; }
+          35% { opacity: 0.2; }
+          36% { opacity: 1; }
+          70% { opacity: 1; }
+          71% { opacity: 0.5; }
+          72% { opacity: 1; }
+        }
         @keyframes svg-walk-circle {
           from { stroke-dashoffset: 100; }
           to { stroke-dashoffset: 0; }
@@ -58,6 +71,15 @@ export default function Hero() {
           animation: fade-slide 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
+        @keyframes cyber-glitch-1 {
+          0% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 1px); }
+          20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); }
+          40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); }
+          60% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); }
+          80% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, 1px); }
+          100% { clip-path: inset(30% 0 50% 0); transform: translate(1px, -1px); }
+        }
+
         .shimmer-text {
           background: linear-gradient(
             90deg,
@@ -74,21 +96,37 @@ export default function Hero() {
           animation: text-shimmer-subtle 7s ease-in-out infinite;
         }
 
-        .outline-text {
+        .outline-glitch {
           color: transparent;
           -webkit-text-stroke: 2px rgba(255, 255, 255, 0.8);
           position: relative;
         }
-        .outline-text::after {
-          /* Add a tiny subtle glow to the outline */
-          content: 'Hasan';
+
+        .outline-glitch::before,
+        .outline-glitch::after {
+          content: attr(data-text);
           position: absolute;
-          left: 0;
           top: 0;
-          color: transparent;
-          -webkit-text-stroke: 2px rgba(34, 211, 238, 0.4);
-          filter: blur(8px);
-          z-index: -1;
+          left: 0;
+          width: 100%;
+          color: transparent; 
+          -webkit-text-stroke: 2px rgba(255, 255, 255, 1);
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .outline-glitch::before {
+          opacity: 1;
+          animation: cyber-glitch-1 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+          -webkit-text-stroke: 2px rgba(255,0,0,0.6);
+          z-index: 10;
+        }
+        
+        .outline-glitch::after {
+          opacity: 1;
+          animation: cyber-glitch-1 5s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse infinite;
+          -webkit-text-stroke: 2px rgba(34,211,238,0.6);
+          z-index: 10;
         }
 
         .walk-path-circle-1 {
@@ -161,12 +199,15 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className={`anim-element relative z-10 ${uniqueFont.className} w-full`} style={{ animationDelay: '0.1s' }}>
-              <span className="block text-[clamp(3.5rem,12vw,5.5rem)] lg:text-[clamp(5rem,10vw,8.5rem)] leading-[0.95] tracking-tight text-white mb-2 md:mb-4 w-full wrap-break-word">
-                <span className="shimmer-text drop-shadow-[0_0_15px_rgba(255,255,255,0.1)] block w-full pl-2">Nurulla</span>
+            <h1 
+              className={`anim-element relative z-10 ${uniqueFont.className} w-full leading-none group`} 
+              style={{ animationDelay: '0.1s' }}
+            >
+              <span className="block text-[clamp(4.5rem,12vw,6.5rem)] lg:text-[clamp(5.5rem,8vw,10rem)] leading-[0.95] font-extrabold tracking-tighter uppercase w-full wrap-break-word">
+                <span className="shimmer-text block w-full drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">Nurulla</span>
               </span>
-              <span className="block text-[clamp(3.5rem,12vw,5.5rem)] lg:text-[clamp(5rem,10vw,8.5rem)] leading-[0.9] tracking-tight text-white w-full wrap-break-word">
-                <span className="outline-text block w-full pl-2">Hasan</span>
+              <span className="block text-[clamp(4.5rem,12vw,6.5rem)] lg:text-[clamp(5.5rem,8vw,10rem)] leading-[0.8] font-bold tracking-tight uppercase w-full wrap-break-word">
+                <span className="outline-glitch block w-full" data-text="Hasan.">Hasan.</span>
               </span>
             </h1>
 

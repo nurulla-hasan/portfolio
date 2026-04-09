@@ -220,12 +220,12 @@ export default function Hero() {
           <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 15s linear infinite' }} />
         </div>
         
-        <div className="hidden lg:block absolute left-[38%] top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.2s' }}>
+        {/* <div className="hidden lg:block absolute left-[38%] top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.2s' }}>
           <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 7s linear infinite 1.5s' }} />
-        </div>
+        </div> */}
 
         <div className="hidden lg:block absolute right-24 top-0 bottom-0 w-px bg-white/10 anim-line z-0 overflow-hidden" style={{ animationDelay: '0.4s' }}>
-          <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 6s linear infinite 3s' }} />
+          <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary" style={{ animation: 'walk-v 15s linear infinite 3s' }} />
         </div>
         
         {/* Horizontal intersection lines */}
@@ -259,7 +259,7 @@ export default function Hero() {
                 <span className="shimmer-text block w-full drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">Nurulla</span>
               </span>
               <span className="block text-[clamp(4.5rem,12vw,6.5rem)] lg:text-[clamp(5.5rem,8vw,10rem)] leading-[0.8] font-bold tracking-tight uppercase w-full wrap-break-word">
-                <span className="outline-glitch block w-full" data-text="Hasan.">Hasan</span>
+                <span className="outline-glitch block w-full" data-text="Hasan">Hasan</span>
               </span>
             </h1>
 

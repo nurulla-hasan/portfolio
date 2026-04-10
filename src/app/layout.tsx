@@ -3,6 +3,7 @@ import { Comic_Neue, Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme-provider";
+import SocialSidebar from "@/components/layout/social-sidebar";
 
 const comicNeue = Comic_Neue({
   subsets: ["latin"],
@@ -48,6 +49,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <SocialSidebar />
         </ThemeProvider>
       </body>
     </html>

@@ -213,11 +213,11 @@ export default function Hero() {
         </div>
 
           {/* Horizontal intersection lines */}
-        <div className="hidden lg:block absolute left-0 right-0 top-[12%] h-px anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.6s' }}>
+        {/* <div className="hidden lg:block absolute left-0 right-0 top-[12%] h-px bg-border/30 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.6s' }}>
           <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 40s linear infinite 2s' }} />
-        </div>
+        </div> */}
         
-        <div className="hidden lg:block absolute left-0 right-0 top-[88%] h-px anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.8s' }}>
+        <div className="hidden lg:block absolute left-0 right-0 top-[88%] h-px bg-border/30 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.8s' }}>
           <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 40s linear infinite 0s' }} />
         </div>
 
@@ -236,7 +236,7 @@ export default function Hero() {
               style={{ animationDelay: '0.1s' }}
             >
               <span className="block text-[clamp(4.5rem,12vw,6.5rem)] lg:text-[clamp(5.5rem,8vw,10rem)] leading-[0.95] font-extrabold tracking-tighter uppercase w-full wrap-break-word">
-                <span className="shimmer-text block w-full drop-shadow-[0_0_15px_var(--primary-foreground)]">Nurulla</span>
+                <span className="shimmer-text block w-full">Nurulla</span>
               </span>
               <span className="block text-[clamp(4.5rem,12vw,6.5rem)] lg:text-[clamp(5.5rem,8vw,10rem)] leading-[0.8] font-bold tracking-tight uppercase w-full wrap-break-word">
                 <span className="outline-glitch block w-full" data-text="Hasan">Hasan</span>
@@ -248,7 +248,7 @@ export default function Hero() {
                 A minimalistic approach to engineering. Specializing in highly optimized, mathematically precise frontend experiences using the MERN stack. I build interfaces that feel alive, combining structural robustness with fluid motion.
               </p>
 
-              <div className="flex flex-col gap-8 md:gap-10 items-start lg:border-l  lg:pl-10 mt-4 lg:mt-0 w-full">
+              <div className="flex flex-col gap-8 md:gap-10 items-start lg:border-l border-border/40 lg:pl-10 mt-4 lg:mt-0 w-full">
                 {/* Expanded Micro-Stats / Info Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 md:gap-y-8 w-full max-w-full">
                   <div className="flex flex-col gap-2">
@@ -278,7 +278,7 @@ export default function Hero() {
                 
                 <Link 
                   href="#projects" 
-                  className="group flex items-center gap-4 border-b  pb-2 hover:border-primary transition-colors"
+                  className="group flex items-center gap-4 border-b border-border/40 pb-2 hover:border-primary transition-colors"
                 >
                   <span className="text-[0.75rem] font-medium tracking-[0.2em] uppercase text-foreground group-hover:text-primary transition-colors">
                     Explore Ecosystem

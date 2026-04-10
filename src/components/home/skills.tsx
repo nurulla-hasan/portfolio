@@ -83,10 +83,10 @@ export default function Skills() {
 
       {/* Synchronized Horizontal Lines */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute left-0 right-0 top-[12%] h-px overflow-hidden">
+        <div className="absolute left-0 right-0 top-[12%] h-px bg-border/20 overflow-hidden">
           <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 35s linear infinite 10s' }} />
         </div>
-        <div className="absolute left-0 right-0 top-[88%] h-px overflow-hidden">
+        <div className="absolute left-0 right-0 top-[88%] h-px bg-border/20 overflow-hidden">
           <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 35s linear infinite 1s' }} />
         </div>
       </div>
@@ -105,7 +105,7 @@ export default function Skills() {
             <h2
               className={`${uniqueFont.className} text-[clamp(2rem,3.5vw,3.5rem)] leading-none font-extrabold tracking-tighter uppercase text-foreground`}
             >
-              <span className="shimmer-text block mb-1 drop-shadow-[0_0_15px_var(--primary-foreground)]">
+              <span className="shimmer-text block mb-1">
                 System
               </span>
               <span className="outline-wipe mt-2 block" data-text="Architecture">
@@ -129,7 +129,7 @@ export default function Skills() {
           {SKILL_GROUPS.map((group) => (
             <div
               key={group.id}
-              className="skill-card relative rounded-2xl border  bg-background/30 backdrop-blur-sm p-6 flex flex-col gap-5 overflow-hidden group cursor-default"
+              className="skill-card relative rounded-2xl border border-border/40 bg-background/30 backdrop-blur-sm p-6 flex flex-col gap-5 overflow-hidden group cursor-default"
             >
               {/* Top accent line */}
               <div
@@ -173,7 +173,7 @@ export default function Skills() {
               </h3>
 
               {/* Divider */}
-              <div className="w-full h-px relative overflow-hidden">
+              <div className="w-full h-px bg-border/20 relative overflow-hidden">
                 <div
                   className="absolute inset-y-0 left-0 w-0 group-hover:w-full transition-all duration-700 ease-out"
                   style={{ backgroundColor: group.color, opacity: 0.5 }}

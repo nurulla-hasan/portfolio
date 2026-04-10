@@ -45,8 +45,8 @@ export default function Navbar() {
             <div className="absolute right-0 top-1/2 -translate-y-1/2 h-px w-1 bg-muted-foreground/40 group-hover:w-2 group-hover:bg-primary transition-all duration-500" />
 
             {/* Rotating Frames */}
-            <div className="absolute inset-2 border  rounded-md group-hover:border-primary/50 transition-all duration-500 group-hover:rotate-90 group-hover:scale-110" />
-            <div className="absolute inset-2 border  rounded-md rotate-45 group-hover:border-sidebar-primary/50 transition-all duration-700 delay-100 group-hover:rotate-135" />
+            <div className="absolute inset-2 border border-border/40 rounded-md group-hover:border-primary/50 transition-all duration-500 group-hover:rotate-90 group-hover:scale-110" />
+            <div className="absolute inset-2 border border-border/20 rounded-md rotate-45 group-hover:border-sidebar-primary/50 transition-all duration-700 delay-100 group-hover:rotate-135" />
             
             {/* Kinetic Core */}
             <div className="relative w-1.5 h-1.5 bg-foreground rounded-full group-hover:bg-primary transition-all duration-500">
@@ -66,7 +66,7 @@ export default function Navbar() {
 
         {/* Minimal Nav */}
         <nav className={`hidden md:flex items-center gap-12 ${uniqueFont.className}`}>
-          <div className="flex items-center gap-10 border-r  pr-12">
+          <div className="flex items-center gap-10 border-r border-border/40 pr-12">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.label}
@@ -84,7 +84,7 @@ export default function Navbar() {
 
           <a
             href="/Nurulla-Hasan-CV.pdf"
-            className="relative group px-6 py-2 overflow-hidden border /60 hover:border-primary/50 transition-all duration-700 glass-card"
+            className="relative group px-6 py-2 overflow-hidden border border-border/60 hover:border-primary/50 transition-all duration-700 glass-card"
           >
             {/* Iridescent Shifting Background */}
             <div className="absolute inset-0 bg-linear-to-r from-destructive/10 via-primary/10 to-sidebar-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-shimmer scale-150" />
@@ -102,7 +102,7 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile Menu Toggle (Abstract) */}
-        <button className="md:hidden group flex flex-col items-end gap-1.5 p-2 bg-muted/50 rounded-lg border  glass-card">
+        <button className="md:hidden group flex flex-col items-end gap-1.5 p-2 bg-muted/50 rounded-lg border border-border/40 glass-card">
           <span className="w-6 h-px bg-foreground group-hover:bg-primary transition-all duration-300"></span>
           <span className="w-3 h-px bg-muted-foreground group-hover:w-6 group-hover:bg-sidebar-primary transition-all duration-300"></span>
         </button>

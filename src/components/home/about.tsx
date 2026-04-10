@@ -82,10 +82,10 @@ export default function About() {
       {/* Background Architectural HUD & Lines */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Horizontal Lines matched with Hero */}
-        <div className="absolute left-0 right-0 top-[12%] h-px overflow-hidden">
+        <div className="absolute left-0 right-0 top-[12%] h-px bg-border/20 overflow-hidden">
           <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 35s linear infinite 5s' }} />
         </div>
-        <div className="absolute left-0 right-0 top-[88%] h-px overflow-hidden">
+        <div className="absolute left-0 right-0 top-[88%] h-px bg-border/20 overflow-hidden">
           <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 35s linear infinite 1s' }} />
         </div>
       </div>
@@ -108,7 +108,7 @@ export default function About() {
               <span className="outline-glitch" data-text="Systems">Systems</span>
             </h2>
 
-            <div className="relative border-l  pl-8 py-1 space-y-4">
+            <div className="relative border-l border-border/40 pl-8 py-1 space-y-4">
                <p className="text-[0.9rem] md:text-[1rem] font-light leading-relaxed text-foreground/80 max-w-xl">
                 I am a <span className="text-primary font-medium">Frontend-Focused MERN Stack Developer</span> with a passion for building high-performance, scalable web systems. My expertise lies in creating mathematically precise interfaces that are as robust as they are beautiful.
                </p>
@@ -141,7 +141,7 @@ export default function About() {
                <div className="absolute inset-0 scan-line pointer-events-none z-0" />
 
                {/* Header */}
-               <div className="flex items-center justify-between mb-8 border-b  pb-4 relative z-10">
+               <div className="flex items-center justify-between mb-8 border-b border-border/40 pb-4 relative z-10">
                   <div className="flex items-center gap-4">
                      <Terminal className="w-5 h-5 text-primary" />
                      <div className="flex flex-col">
@@ -150,7 +150,7 @@ export default function About() {
                      </div>
                   </div>
                   <div className="flex gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full border " />
+                    <div className="w-2.5 h-2.5 rounded-full border border-border/40" />
                     <div className="w-2.5 h-2.5 rounded-full bg-primary/20" />
                     <div className="w-2.5 h-2.5 rounded-full bg-primary" />
                   </div>
@@ -166,7 +166,7 @@ export default function About() {
                      </div>
                      <div className="flex flex-wrap gap-2">
                         {["Next.js", "React", "TypeScript", "Tailwind"].map(s => (
-                          <span key={s} className="skill-tag text-[0.65rem] px-3 py-1.5 font-bold tracking-wider text-muted-foreground rounded-lg border ">
+                          <span key={s} className="skill-tag text-[0.65rem] px-3 py-1.5 font-bold tracking-wider text-muted-foreground rounded-lg border border-border/40">
                             {s}
                           </span>
                         ))}
@@ -181,7 +181,7 @@ export default function About() {
                      </div>
                      <div className="flex flex-wrap gap-2">
                         {["Redux", "RTK Query", "Zod", "Zustand"].map(s => (
-                          <span key={s} className="skill-tag text-[0.65rem] px-3 py-1.5 font-bold tracking-wider text-muted-foreground rounded-lg border  hover:bg-sidebar-primary! hover:shadow-sidebar-primary!">
+                          <span key={s} className="skill-tag text-[0.65rem] px-3 py-1.5 font-bold tracking-wider text-muted-foreground rounded-lg border border-border/40 hover:bg-sidebar-primary! hover:shadow-sidebar-primary!">
                             {s}
                           </span>
                         ))}
@@ -196,7 +196,7 @@ export default function About() {
                      </div>
                      <div className="flex flex-wrap gap-2">
                         {["Git", "Vercel", "REST APIs"].map(s => (
-                          <span key={s} className="skill-tag text-[0.65rem] px-3 py-1.5 font-bold tracking-wider text-muted-foreground rounded-lg border  hover:bg-primary! hover:shadow-primary!">
+                          <span key={s} className="skill-tag text-[0.65rem] px-3 py-1.5 font-bold tracking-wider text-muted-foreground rounded-lg border border-border/40 hover:bg-primary! hover:shadow-primary!">
                             {s}
                           </span>
                         ))}
@@ -205,7 +205,7 @@ export default function About() {
                </div>
 
                {/* Footer Details */}
-               <div className="mt-8 pt-4 border-t /20 flex justify-between items-center opacity-40">
+               <div className="mt-8 pt-4 border-t border-border/20 flex justify-between items-center opacity-40">
                   <span className="text-[0.45rem] tracking-[0.4em] uppercase font-bold">Encrypted Connection</span>
                   <span className="text-[0.45rem] tracking-[0.4em] uppercase font-bold">Node: 26//DHAKA</span>
                </div>

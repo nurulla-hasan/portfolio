@@ -12,10 +12,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03]" />
         
         {/* Vertical Lines */}
-        <div className="hidden lg:block absolute left-24 top-0 bottom-0 w-px overflow-hidden">
+        <div className="hidden lg:block absolute left-24 top-0 bottom-0 w-px bg-border/30 overflow-hidden">
           <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary/80" style={{ animation: 'walk-v 20s linear infinite 2s' }} />
         </div>
-        <div className="hidden lg:block absolute right-24 top-0 bottom-0 w-px overflow-hidden">
+        <div className="hidden lg:block absolute right-24 top-0 bottom-0 w-px bg-border/30 overflow-hidden">
           <div className="absolute left-0 w-px h-16 bg-linear-to-b from-transparent to-primary/80" style={{ animation: 'walk-v 20s linear infinite 7s' }} />
         </div>
         

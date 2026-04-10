@@ -105,7 +105,7 @@ export default function Navbar() {
             </div>
 
             <a
-              href="/Nurulla-Hasan-CV.pdf"
+              href="/resume"
               className="relative group px-6 py-1 overflow-hidden border border-border/60 hover:border-primary/50 transition-all duration-700 glass-card rounded-full"
             >
               <div className="absolute inset-0 bg-linear-to-r from-destructive/10 via-primary/10 to-sidebar-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-shimmer scale-150" />
@@ -186,7 +186,7 @@ export default function Navbar() {
           {/* Panel Footer */}
           <div className="p-8 border-t border-border/20 bg-muted/10">
             <a
-              href="/Nurulla-Hasan-CV.pdf"
+              href="/resume"
               className="flex items-center justify-center w-full py-4 rounded-xl border border-primary/30 bg-primary/5 text-[0.7rem] font-bold tracking-[0.3em] uppercase text-primary hover:bg-primary hover:text-white transition-all duration-500"
             >
               Resume

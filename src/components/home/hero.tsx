@@ -74,17 +74,17 @@ export default function Hero() {
             className="anim-element relative z-10 font-display w-full leading-none group text-foreground"
             style={{ animationDelay: "0.1s" }}
           >
-            <span className="block text-[clamp(4.5rem,12vw,6.5rem)] lg:text-[clamp(5.5rem,8vw,10rem)] leading-[0.95] font-bold tracking-tighter uppercase w-full wrap-break-word">
+            <span className="block text-[clamp(3.5rem,15vw,6.5rem)] lg:text-[clamp(5.5rem,8vw,10rem)] leading-[0.95] font-bold tracking-tighter uppercase w-full wrap-break-word">
               <span className="shimmer-text block w-full">Nurulla</span>
             </span>
-            <span className="block text-[clamp(4.5rem,12vw,6.5rem)] lg:text-[clamp(5.5rem,8vw,10rem)] leading-[0.8] font-bold tracking-tight uppercase w-full wrap-break-word">
+            <span className="block text-[clamp(3.5rem,15vw,6.5rem)] lg:text-[clamp(5.5rem,8vw,10rem)] leading-[0.8] font-bold tracking-tight uppercase w-full wrap-break-word">
               <span className="outline-glitch block w-full" data-text="Hasan">
                 Hasan
               </span>
             </span>
           </h1>
           <div
-            className="anim-element mt-10 md:mt-12 grid lg:grid-cols-[1fr_1.2fr] gap-10 md:gap-12 items-start relative z-10 w-full"
+            className="anim-element mt-10 md:mt-12 grid grid-cols-1 sm:grid-cols-[1fr_1.2fr] gap-10 md:gap-12 items-start relative z-10 w-full"
             style={{ animationDelay: "0.2s" }}
           >
             <p className="text-[0.85rem] md:text-[0.95rem] font-light leading-relaxed text-muted-foreground max-w-full lg:max-w-sm">

@@ -171,7 +171,7 @@ export default function Navbar() {
               >
                 <span className="text-[0.55rem] font-bold tracking-[0.3em] text-primary">0{i+1}</span>
                 <div className="flex items-center justify-between">
-                  <span className="text-3xl uppercase text-foreground group-hover:pl-2 transition-all duration-300">
+                  <span className="text-2xl sm:text-3xl font-medium tracking-tight uppercase text-foreground group-hover:pl-2 transition-all duration-300">
                     {link.label}
                   </span>
                   <div className="w-8 h-px bg-border group-hover:w-12 group-hover:bg-primary transition-all duration-300" />

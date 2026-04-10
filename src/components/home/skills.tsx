@@ -58,15 +58,15 @@ export default function Skills() {
         {/* Section Header */}
         <div className="flex items-center justify-between mb-10 md:mb-16 relative">
           <div className="flex flex-col">
-            <div className="flex items-center gap-4 mb-4">
-              <span className="w-8 md:w-12 h-px bg-border block" />
-              <span className="text-[0.55rem] md:text-[0.65rem] font-bold tracking-[0.4em] text-primary uppercase">
+            <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+              <span className="w-6 md:w-12 h-px bg-border block" />
+              <span className="text-[0.55rem] md:text-[0.65rem] font-bold tracking-[0.3em] md:tracking-[0.4em] text-primary uppercase">
                 02. Capabilities
               </span>
             </div>
 
             <h2
-              className="text-[clamp(2rem,3.5vw,3.5rem)] leading-none font-bold tracking-wide uppercase text-foreground"
+              className="text-[clamp(2.5rem,6vw,4rem)] leading-[0.9] font-bold tracking-wide uppercase text-foreground"
             >
               <span className="shimmer-text block mb-1">System</span>
               <span
@@ -89,7 +89,7 @@ export default function Skills() {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {SKILL_GROUPS.map((group) => (
             <div
               key={group.id}

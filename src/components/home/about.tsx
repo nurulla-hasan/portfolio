@@ -43,7 +43,7 @@ export default function About() {
             </div>
 
             <h2
-              className="text-[clamp(2rem,4vw,4rem)] leading-[0.95] font-bold tracking-wide uppercase mb-4 text-foreground"
+              className="text-[clamp(2rem,6vw,4rem)] leading-[0.95] font-bold tracking-wide uppercase mb-4 text-foreground"
             >
               Building <br />
               <span className="shimmer-text">Robust</span> <br />
@@ -89,7 +89,7 @@ export default function About() {
           </div>
 
           {/* Right Column: Technical Matrix */}
-          <div className="relative group perspective-1000 scale-95 origin-right">
+          <div className="relative group perspective-1000 scale-100 lg:scale-95 origin-center lg:origin-right order-1 lg:order-2 mb-10 lg:mb-0">
             {/* Ambient Background Glow */}
             <div className="absolute inset-0 bg-primary/5 blur-[100px] rounded-full scale-150 group-hover:bg-primary/10 transition-colors duration-1000" />
 

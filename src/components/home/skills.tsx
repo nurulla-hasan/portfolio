@@ -11,26 +11,26 @@ const SKILL_GROUPS = [
   {
     id: "01",
     title: "Core Ecosystem",
-    color: "hsl(187, 80%, 55%)", // cyan / primary
-    skills: ["React.js", "Next.js (App Router)", "TypeScript", "JavaScript (ES6+)"],
+    color: "var(--primary)",
+    skills: ["React.js", "Next.js", "TypeScript", "JavaScript"],
   },
   {
     id: "02",
-    title: "State & Data Layer",
-    color: "hsl(239, 84%, 67%)", // indigo / sidebar-primary
-    skills: ["Redux Toolkit", "RTK Query", "TanStack Query", "Context API"],
+    title: "State & Data",
+    color: "var(--sidebar-primary)",
+    skills: ["Redux Toolkit", "RTK Query", "TanStack Query", "Zustand"],
   },
   {
     id: "03",
     title: "UI & Validation",
-    color: "hsl(350, 89%, 60%)", // rose / destructive
-    skills: ["Tailwind CSS", "Shadcn UI", "React Hook Form", "Zod"],
+    color: "var(--destructive)",
+    skills: ["Tailwind CSS", "Shadcn UI", "Hook Form", "Zod"],
   },
   {
     id: "04",
-    title: "Architecture & Tools",
-    color: "hsl(0, 0%, 85%)", // near-white / foreground
-    skills: ["Feature-Based Structure", "Custom Hooks", "Git & GitHub", "Vercel"],
+    title: "Tools & Arch",
+    color: "var(--foreground)",
+    skills: ["Feature-Arch", "Custom Hooks", "Git", "Vercel"],
   },
 ];
 
@@ -38,7 +38,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative flex min-h-screen w-full items-center bg-transparent overflow-hidden"
+      className="relative h-screen min-h-175 w-full flex items-center bg-transparent overflow-hidden"
     >
       <style suppressHydrationWarning>{`
         .outline-wipe {
@@ -81,25 +81,21 @@ export default function Skills() {
         }
       `}</style>
 
-      {/* Horizontal Intersections */}
-      <div className="hidden lg:block absolute left-0 right-0 top-[10%] h-px bg-border/30 overflow-hidden z-0 pointer-events-none">
-        <div
-          className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary"
-          style={{ animation: "walk-h 30s linear infinite 10s" }}
-        />
-      </div>
-      <div className="hidden lg:block absolute left-0 right-0 bottom-[10%] h-px bg-border/30 overflow-hidden z-0 pointer-events-none">
-        <div
-          className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary"
-          style={{ animation: "walk-h 30s linear infinite 1s" }}
-        />
+      {/* Synchronized Horizontal Lines */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute left-0 right-0 top-[12%] h-px overflow-hidden">
+          <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 35s linear infinite 10s' }} />
+        </div>
+        <div className="absolute left-0 right-0 top-[88%] h-px overflow-hidden">
+          <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 35s linear infinite 1s' }} />
+        </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 md:px-16 relative z-10 w-full py-24">
+      <div className="max-w-7xl mx-auto px-8 md:px-16 relative z-10 w-full py-10 scale-95">
         {/* Section Header */}
-        <div className="flex items-center justify-between mb-16 md:mb-24 relative">
+        <div className="flex items-center justify-between mb-10 md:mb-16 relative">
           <div className="flex flex-col">
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-4 mb-4">
               <span className="w-8 md:w-12 h-px bg-border block" />
               <span className="text-[0.55rem] md:text-[0.65rem] font-bold tracking-[0.4em] text-primary uppercase">
                 02. Capabilities
@@ -133,10 +129,7 @@ export default function Skills() {
           {SKILL_GROUPS.map((group) => (
             <div
               key={group.id}
-              className="skill-card relative rounded-2xl border border-border/50 bg-background/30 backdrop-blur-sm p-7 flex flex-col gap-6 overflow-hidden group cursor-default"
-              style={{
-                boxShadow: `inset 0 -60px 60px -60px ${group.color}08`,
-              }}
+              className="skill-card relative rounded-2xl border border-border/50 bg-background/30 backdrop-blur-sm p-6 flex flex-col gap-5 overflow-hidden group cursor-default"
             >
               {/* Top accent line */}
               <div
@@ -180,7 +173,7 @@ export default function Skills() {
               </h3>
 
               {/* Divider */}
-              <div className="w-full h-px bg-border/30 relative overflow-hidden">
+              <div className="w-full h-px relative overflow-hidden">
                 <div
                   className="absolute inset-y-0 left-0 w-0 group-hover:w-full transition-all duration-700 ease-out"
                   style={{ backgroundColor: group.color, opacity: 0.5 }}

@@ -87,11 +87,11 @@ export default function Hero() {
         .shimmer-text {
           background: linear-gradient(
             90deg,
-            var(--destructive) 0%,
+            var(--primary) 0%,
             var(--sidebar-primary) 25%,
             var(--foreground) 50%,
             var(--sidebar-primary) 75%,
-            var(--destructive) 100%
+            var(--primary) 100%
           );
           background-size: 200% auto;
           color: transparent;
@@ -121,14 +121,14 @@ export default function Hero() {
         .outline-glitch::before {
           opacity: 1;
           animation: cyber-glitch-1 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-          -webkit-text-stroke: 2px var(--destructive);
+          -webkit-text-stroke: 2px var(--primary);
           z-index: 10;
         }
         
         .outline-glitch::after {
           opacity: 1;
           animation: cyber-glitch-1 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse infinite;
-          -webkit-text-stroke: 2px var(--primary);
+          -webkit-text-stroke: 2px var(--sidebar-primary);
           z-index: 10;
         }
 
@@ -144,7 +144,7 @@ export default function Hero() {
           animation: slow-rotate 60s linear infinite;
         }
       `}</style>
-      <main className="relative flex min-h-screen w-full items-center bg-transparent overflow-hidden selection:bg-primary/20">
+      <main className="relative flex h-screen min-h-175 w-full items-center bg-transparent overflow-hidden selection:bg-primary/20">
         
         {/* Abstract Background Elements & Neon Walking Circles */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -213,11 +213,11 @@ export default function Hero() {
         </div>
 
           {/* Horizontal intersection lines */}
-        <div className="hidden lg:block absolute left-0 right-0 top-[12%] h-px bg-border/50 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.6s' }}>
+        <div className="hidden lg:block absolute left-0 right-0 top-[12%] h-px anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.6s' }}>
           <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 40s linear infinite 2s' }} />
         </div>
         
-        <div className="hidden lg:block absolute left-0 right-0 top-[88%] h-px bg-border/50 anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.8s' }}>
+        <div className="hidden lg:block absolute left-0 right-0 top-[88%] h-px anim-line-h z-0 overflow-hidden" style={{ animationDelay: '0.8s' }}>
           <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 40s linear infinite 0s' }} />
         </div>
 

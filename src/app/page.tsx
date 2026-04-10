@@ -7,7 +7,7 @@ import SmoothScrollProvider from "@/components/providers/smooth-scroll";
 export default function Home() {
   return (
     <SmoothScrollProvider>
-      <main className="relative min-h-screen bg-background selection:bg-primary/20 selection:text-primary-foreground">
+      <main>
         {/* Global Architectural HUD Grid */}
         <div className="fixed inset-0 z-0 pointer-events-none">
           {/* Noise overlay */}

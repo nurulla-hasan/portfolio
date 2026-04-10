@@ -2,9 +2,9 @@
 
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Outfit } from "next/font/google";
+import { Poppins } from "next/font/google";
 
-const uniqueFont = Outfit({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
+const uniqueFont = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function Hero() {
   return (
@@ -88,9 +88,9 @@ export default function Hero() {
           background: linear-gradient(
             90deg,
             var(--primary) 0%,
-            var(--sidebar-primary) 25%,
-            var(--foreground) 50%,
-            var(--sidebar-primary) 75%,
+            var(--secondary) 25%,
+            var(--accent) 50%,
+            var(--chart-1) 75%,
             var(--primary) 100%
           );
           background-size: 200% auto;
@@ -144,7 +144,7 @@ export default function Hero() {
           animation: slow-rotate 60s linear infinite;
         }
       `}</style>
-      <main id="home" className="relative flex h-screen min-h-175 w-full items-center bg-transparent overflow-hidden selection:bg-primary/20">
+      <main id="home" className="relative flex h-screen  w-full items-center bg-transparent overflow-hidden selection:bg-primary/20">
         
         {/* Abstract Background Elements & Neon Walking Circles */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">

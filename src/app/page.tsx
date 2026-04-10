@@ -2,6 +2,7 @@ import Navbar from "@/components/home/navbar";
 import Hero from "@/components/home/hero";
 import About from "@/components/home/about";
 import Skills from "@/components/home/skills";
+import Experience from "@/components/home/experience";
 import SmoothScrollProvider from "@/components/providers/smooth-scroll";
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
           <Hero />
           <About />
           <Skills />
+          <Experience />
           {/* 
           <Projects />
           <Contact />

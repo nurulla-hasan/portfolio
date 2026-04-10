@@ -3,14 +3,15 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { User, Cpu, Briefcase, FolderGit2, Mail } from "lucide-react";
 
 
 const NAV_LINKS = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  { href: "#about", label: "About", icon: User },
+  { href: "#skills", label: "Skills", icon: Cpu },
+  { href: "#experience", label: "Experience", icon: Briefcase },
+  { href: "#projects", label: "Projects", icon: FolderGit2 },
+  { href: "#contact", label: "Contact", icon: Mail },
 ];
 
 export default function Navbar() {
@@ -171,10 +172,12 @@ export default function Navbar() {
               >
                 <span className="text-[0.55rem] font-bold tracking-[0.3em] text-primary">0{i+1}</span>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl sm:text-3xl font-medium tracking-tight uppercase text-foreground group-hover:pl-2 transition-all duration-300">
-                    {link.label}
-                  </span>
-                  <div className="w-8 h-px bg-border group-hover:w-12 group-hover:bg-primary transition-all duration-300" />
+                  <div className="flex items-center gap-3">
+                    <link.icon className="w-6 h-6 text-primary/60 group-hover:text-primary transition-colors" />
+                    <span className="text-2xl sm:text-3xl font-medium tracking-tight uppercase text-foreground group-hover:pl-2 transition-all duration-300">
+                      {link.label}
+                    </span>
+                  </div>                  <div className="w-8 h-px bg-border group-hover:w-12 group-hover:bg-primary transition-all duration-300" />
                 </div>
               </Link>
             ))}

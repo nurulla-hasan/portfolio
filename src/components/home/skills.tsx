@@ -1,6 +1,7 @@
 "use client";
 
 import SectionLayout from "../layout/section-layout";
+import { Layout, Database, ShieldCheck, Zap } from "lucide-react";
 
 
 const SKILL_GROUPS = [
@@ -8,24 +9,28 @@ const SKILL_GROUPS = [
     id: "01",
     title: "Core Ecosystem",
     color: "var(--primary)",
+    icon: Layout,
     skills: ["React.js", "Next.js", "TypeScript", "JavaScript"],
   },
   {
     id: "02",
     title: "State & Data",
     color: "var(--sidebar-primary)",
+    icon: Database,
     skills: ["Redux Toolkit", "RTK Query", "TanStack Query", "Zustand"],
   },
   {
     id: "03",
     title: "UI & Validation",
     color: "var(--destructive)",
+    icon: ShieldCheck,
     skills: ["Tailwind CSS", "Shadcn UI", "Hook Form", "Zod"],
   },
   {
     id: "04",
     title: "Tools & Arch",
     color: "var(--foreground)",
+    icon: Zap,
     skills: ["Feature-Arch", "Custom Hooks", "Git", "Vercel"],
   },
 ];
@@ -124,6 +129,7 @@ export default function Skills() {
                   SEQ_{group.id}
                 </span>
                 <div className="flex items-center gap-2">
+                  <group.icon className="w-4 h-4 opacity-100 group-hover:scale-110 transition-transform" style={{ color: group.color }} />
                   <div
                     className="w-1.5 h-1.5 rounded-full animate-pulse"
                     style={{

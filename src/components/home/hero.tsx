@@ -2,10 +2,8 @@
 
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Poppins } from "next/font/google";
 import SectionLayout from "../layout/section-layout";
 
-const uniqueFont = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function Hero() {
   return (
@@ -18,7 +16,7 @@ export default function Hero() {
         {/* Abstract Background Elements & Neon Walking Circles */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
           {/* Huge Right Circle */}
-          {/* <div className="absolute top-[50%] left-[92%] w-[60vw] h-[60vw] -translate-x-1/2 -translate-y-1/2 rotate-45">
+          <div className="absolute top-[50%] left-[92%] w-[60vw] h-[60vw] -translate-x-1/2 -translate-y-1/2 rotate-45">
              <svg className="w-full h-full" viewBox="0 0 1000 1000">
                <defs>
                  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -32,10 +30,10 @@ export default function Hero() {
                <circle cx="500" cy="500" r="498" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="2" />
                <circle cx="500" cy="500" r="498" fill="none" stroke="url(#grad1)" strokeWidth="2.5" className="walk-path-circle-1" strokeLinecap="round" pathLength="200" style={{ filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.4))' }} />
              </svg>
-          </div> */}
+          </div>
 
           {/* Large Left Circle */}
-          {/* <div className="absolute top-[0%] left-[0%] w-[38vw] h-[38vw] -translate-x-1/2 -translate-y-1/2 rotate-45">
+          <div className="absolute top-[0%] left-[0%] w-[38vw] h-[38vw] -translate-x-1/2 -translate-y-1/2 rotate-45">
              <svg className="w-full h-full rotate-180" viewBox="0 0 1000 1000">
                <defs>
                  <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -49,33 +47,7 @@ export default function Hero() {
                <circle cx="500" cy="500" r="498" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="2" />
                <circle cx="500" cy="500" r="498" fill="none" stroke="url(#grad2)" strokeWidth="2.5" className="walk-path-circle-2" strokeLinecap="round" pathLength="150" style={{ filter: 'drop-shadow(0 0 15px rgba(255,255,255,0.4))' }} />
              </svg>
-          </div> */}
-
-          {/* Abstract Architectural Mesh (Left-Center) */}
-          {/* <div className="absolute top-[53.5%] left-[22%] w-[35vw] h-[35vw] -translate-x-1/2 -translate-y-1/2 opacity-60 pointer-events-none">
-            <svg viewBox="0 0 400 400" className="w-full h-full animate-slow-rotate">
-              <defs>
-                <linearGradient id="mesh-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="#818cf8" stopOpacity="0.2" />
-                </linearGradient>
-              </defs>
-              <g fill="none" stroke="url(#mesh-grad)" strokeWidth="1" style={{ filter: 'drop-shadow(0 0 8px rgba(34,211,238,0.4))' }}>
-                {[...Array(12)].map((_, i) => {
-                  const x = (200 + 150 * Math.cos(i * Math.PI / 6)).toFixed(3);
-                  const y = (200 + 150 * Math.sin(i * Math.PI / 6)).toFixed(3);
-                  return <path key={i} d={`M ${x},${y} L 200,200`} />;
-                })}
-                <circle cx="200" cy="200" r="152" strokeDasharray="10 20" />
-                <circle cx="200" cy="200" r="100" />
-                <path d="M 50,200 L 350,200 M 200,50 L 200,350" strokeDasharray="5 5" opacity="0.6" />
-                <rect x="100" y="100" width="200" height="200" strokeDasharray="15 15" transform="rotate(25 200 200)" />
-                <circle cx="200" cy="200" r="5" fill="#22d3ee" />
-                <rect x="195" y="45" width="10" height="10" stroke="#22d3ee" strokeWidth="0.5" />
-                <rect x="195" y="345" width="10" height="10" stroke="#818cf8" strokeWidth="0.5" />
-              </g>
-            </svg>
-          </div> */}
+          </div>
 
           {/* Grain */}
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03]" />
@@ -99,10 +71,10 @@ export default function Hero() {
             </span>
           </div>
           <h1
-            className={`anim-element relative z-10 ${uniqueFont.className} w-full leading-none group`}
+            className="anim-element relative z-10 font-display w-full leading-none group text-foreground"
             style={{ animationDelay: "0.1s" }}
           >
-            <span className="block text-[clamp(4.5rem,12vw,6.5rem)] lg:text-[clamp(5.5rem,8vw,10rem)] leading-[0.95] font-extrabold tracking-tighter uppercase w-full wrap-break-word">
+            <span className="block text-[clamp(4.5rem,12vw,6.5rem)] lg:text-[clamp(5.5rem,8vw,10rem)] leading-[0.95] font-bold tracking-tighter uppercase w-full wrap-break-word">
               <span className="shimmer-text block w-full">Nurulla</span>
             </span>
             <span className="block text-[clamp(4.5rem,12vw,6.5rem)] lg:text-[clamp(5.5rem,8vw,10rem)] leading-[0.8] font-bold tracking-tight uppercase w-full wrap-break-word">

@@ -3,9 +3,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Outfit } from "next/font/google";
 
-const uniqueFont = Outfit({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 const NAV_LINKS = [
   { href: "#about", label: "About" },
@@ -50,7 +48,7 @@ export default function Navbar() {
               }
               setIsMenuOpen(false);
             }}
-            className={`group flex items-center gap-3 md:gap-5 ${uniqueFont.className}`}
+          className="group flex items-center gap-3 md:gap-5"
           >
             <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
               {/* Architectural Crosshairs */}
@@ -80,7 +78,7 @@ export default function Navbar() {
           </Link>
 
           {/* Minimal Nav */}
-          <nav className={`hidden md:flex items-center gap-12 ${uniqueFont.className}`}>
+          <nav className="hidden md:flex items-center gap-12">
             <div className="flex items-center gap-10 border-r border-border/40 pr-12">
               {NAV_LINKS.map((link) => (
                 <Link
@@ -173,7 +171,7 @@ export default function Navbar() {
               >
                 <span className="text-[0.55rem] font-bold tracking-[0.3em] text-primary">0{i+1}</span>
                 <div className="flex items-center justify-between">
-                  <span className={`${uniqueFont.className} text-3xl font-black tracking-tighter uppercase text-foreground group-hover:pl-2 transition-all duration-300`}>
+                  <span className="text-3xl uppercase text-foreground group-hover:pl-2 transition-all duration-300">
                     {link.label}
                   </span>
                   <div className="w-8 h-px bg-border group-hover:w-12 group-hover:bg-primary transition-all duration-300" />

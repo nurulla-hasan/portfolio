@@ -1,12 +1,7 @@
 "use client";
 
-import { Outfit } from "next/font/google";
 import SectionLayout from "../layout/section-layout";
 
-const uniqueFont = Outfit({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
 
 const SKILL_GROUPS = [
   {
@@ -71,7 +66,7 @@ export default function Skills() {
             </div>
 
             <h2
-              className={`${uniqueFont.className} text-[clamp(2rem,3.5vw,3.5rem)] leading-none font-extrabold tracking-wide uppercase text-foreground`}
+              className="text-[clamp(2rem,3.5vw,3.5rem)] leading-none font-bold tracking-wide uppercase text-foreground"
             >
               <span className="shimmer-text block mb-1">System</span>
               <span
@@ -140,7 +135,7 @@ export default function Skills() {
               </div>
 
               <h3
-                className={`${uniqueFont.className} text-base font-bold uppercase tracking-widest transition-colors duration-500`}
+                className="text-base font-bold uppercase tracking-widest transition-colors duration-500"
                 style={{ color: "var(--foreground)" }}
               >
                 {group.title}

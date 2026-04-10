@@ -1,13 +1,8 @@
 "use client";
 
-import { Outfit } from "next/font/google";
 import { Terminal, ShieldCheck, Database, Layout } from "lucide-react";
 import SectionLayout from "../layout/section-layout";
 
-const uniqueFont = Outfit({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
 
 export default function About() {
   return (
@@ -48,7 +43,7 @@ export default function About() {
             </div>
 
             <h2
-              className={`${uniqueFont.className} text-[clamp(2rem,4vw,4rem)] leading-[0.95] font-black tracking-wide uppercase mb-4 text-foreground`}
+              className="text-[clamp(2rem,4vw,4rem)] leading-[0.95] font-bold tracking-wide uppercase mb-4 text-foreground"
             >
               Building <br />
               <span className="shimmer-text">Robust</span> <br />

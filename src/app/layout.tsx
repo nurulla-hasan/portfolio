@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Comic_Neue, Cormorant_Garamond, Geist_Mono, Syne } from "next/font/google";
+import { Comic_Neue, Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme-provider";
@@ -11,25 +11,11 @@ const comicNeue = Comic_Neue({
   variable: "--font-sans",
 })
 
-const syne = Syne({
+const poppins = Poppins({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
   variable: "--font-display",
-  weight: ["500", "600", "700", "800"],
-})
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-heading-serif",
-  style: ["normal", "italic"],
-  weight: ["400", "500", "600", "700"],
-})
-
-const geistMono = Geist_Mono({
-  display: "swap",
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
 })
 
 export const metadata: Metadata = {
@@ -49,9 +35,7 @@ export default function RootLayout({
         "h-full",
         "antialiased",
         comicNeue.variable,
-        syne.variable,
-        cormorant.variable,
-        geistMono.variable,
+        poppins.variable,
         "font-sans",
       )}
       suppressHydrationWarning

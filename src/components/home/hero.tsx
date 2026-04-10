@@ -248,7 +248,7 @@ export default function Hero() {
                 A minimalistic approach to engineering. Specializing in highly optimized, mathematically precise frontend experiences using the MERN stack. I build interfaces that feel alive, combining structural robustness with fluid motion.
               </p>
 
-              <div className="flex flex-col gap-8 md:gap-10 items-start lg:border-l border-border/50 lg:pl-10 mt-4 lg:mt-0 w-full">
+              <div className="flex flex-col gap-8 md:gap-10 items-start lg:border-l  lg:pl-10 mt-4 lg:mt-0 w-full">
                 {/* Expanded Micro-Stats / Info Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 md:gap-y-8 w-full max-w-full">
                   <div className="flex flex-col gap-2">
@@ -278,7 +278,7 @@ export default function Hero() {
                 
                 <Link 
                   href="#projects" 
-                  className="group flex items-center gap-4 border-b border-border pb-2 hover:border-primary transition-colors"
+                  className="group flex items-center gap-4 border-b  pb-2 hover:border-primary transition-colors"
                 >
                   <span className="text-[0.75rem] font-medium tracking-[0.2em] uppercase text-foreground group-hover:text-primary transition-colors">
                     Explore Ecosystem

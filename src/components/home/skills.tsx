@@ -129,7 +129,7 @@ export default function Skills() {
           {SKILL_GROUPS.map((group) => (
             <div
               key={group.id}
-              className="skill-card relative rounded-2xl border border-border/50 bg-background/30 backdrop-blur-sm p-6 flex flex-col gap-5 overflow-hidden group cursor-default"
+              className="skill-card relative rounded-2xl border  bg-background/30 backdrop-blur-sm p-6 flex flex-col gap-5 overflow-hidden group cursor-default"
             >
               {/* Top accent line */}
               <div

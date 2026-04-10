@@ -144,7 +144,7 @@ export default function Hero() {
           animation: slow-rotate 60s linear infinite;
         }
       `}</style>
-      <main id="home" className="relative flex h-screen  w-full items-center bg-transparent overflow-hidden selection:bg-primary/20">
+      <main id="home" className="relative flex min-h-screen  w-full items-center bg-transparent overflow-hidden selection:bg-primary/20">
         
         {/* Abstract Background Elements & Neon Walking Circles */}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">

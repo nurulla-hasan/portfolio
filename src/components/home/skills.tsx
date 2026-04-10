@@ -38,7 +38,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative h-screen  w-full flex items-center bg-transparent overflow-hidden"
+      className="relative min-h-screen  w-full flex items-center bg-transparent overflow-hidden"
     >
       <style suppressHydrationWarning>{`
         .outline-wipe {

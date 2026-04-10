@@ -28,10 +28,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed left-1/2 -translate-x-1/2 z-100 transition-all duration-700 cubic-bezier(0.16, 1, 0.3, 1) ${
+      className={`fixed left-1/2 -translate-x-1/2 z-100 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         isScrolled
-          ? "top-6 w-[90%] max-w-5xl bg-background/60 backdrop-blur-2xl py-1 border shadow-xs"
-          : "top-0 w-full bg-transparent py-8 px-0 border-transparent shadow-none"
+          ? "top-6 w-[90%] max-w-5xl bg-background/60 backdrop-blur-2xl py-2 px-6 border border-border/50 shadow-md rounded-full"
+          : "top-0 w-full bg-transparent py-6 px-4 border-transparent shadow-none rounded-none"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between overflow-hidden">
@@ -104,7 +104,7 @@ export default function Navbar() {
 
           <a
             href="/Nurulla-Hasan-CV.pdf"
-            className="relative group px-6 py-2 overflow-hidden border border-border/60 hover:border-primary/50 transition-all duration-700 glass-card"
+            className="relative group px-6 py-1 overflow-hidden border border-border/60 hover:border-primary/50 transition-all duration-700 glass-card rounded-full"
           >
             {/* Iridescent Shifting Background */}
             <div className="absolute inset-0 bg-linear-to-r from-destructive/10 via-primary/10 to-sidebar-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-shimmer scale-150" />

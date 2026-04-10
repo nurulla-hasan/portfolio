@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -36,7 +37,18 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between overflow-hidden">
         
         {/* Abstract Minimal Logo */}
-        <Link href="/" className={`group flex items-center gap-5 ${uniqueFont.className}`}>
+        <Link 
+          href="#home" 
+          onClick={(e) => {
+            if ((window as any).lenis) {
+              e.preventDefault();
+              (window as any).lenis.scrollTo("#home", {
+                duration: 2.5,
+              });
+            }
+          }}
+          className={`group flex items-center gap-5 ${uniqueFont.className}`}
+        >
           <div className="relative w-10 h-10 flex items-center justify-center">
             {/* Architectural Crosshairs */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-1 bg-muted-foreground/40 group-hover:h-2 group-hover:bg-primary transition-all duration-500" />
@@ -71,6 +83,14 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
+                onClick={(e) => {
+                  if ((window as any).lenis) {
+                    e.preventDefault();
+                    (window as any).lenis.scrollTo(link.href, {
+                      duration: 2.5, // Even slower and more elegant
+                    });
+                  }
+                }}
                 className="group relative py-2 overflow-hidden"
               >
                 <span className="text-[0.7rem] font-medium tracking-[0.2em] text-muted-foreground uppercase transition-all duration-500 group-hover:text-foreground group-hover:-translate-y-0.5 block">

@@ -149,6 +149,27 @@
   --shadow-2xl: var(--shadow-2xl);
 }
 
+html, body {
+  scroll-behavior: auto !important; /* Let Lenis handle the smoothness */
+  overflow-x: hidden;
+}
+
+.lenis.lenis-smooth {
+  height: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

@@ -48,9 +48,9 @@ export default function Navbar() {
           mass: 1.2
         }}
         className={cn(
-          "fixed left-0 right-0 mx-auto z-100 border backdrop-blur-2xl transition-colors duration-700 overflow-hidden",
+          "fixed left-0 right-0 mx-auto z-100 transition-colors duration-700 overflow-hidden",
           isScrolled
-            ? "bg-background/60 border-border/50 shadow-2xl"
+            ? "bg-background/60 border-border/50 shadow-2xl backdrop-blur-2xl"
             : "bg-transparent border-transparent shadow-none"
         )}
       >

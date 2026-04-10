@@ -91,7 +91,7 @@ export default function About() {
           {/* Right Column: Technical Matrix */}
           <div className="relative group perspective-1000 scale-100 lg:scale-95 origin-center lg:origin-right order-1 lg:order-2 mb-10 lg:mb-0">
             {/* Ambient Background Glow */}
-            <div className="absolute inset-0 bg-primary/5 blur-[100px] rounded-full scale-150 group-hover:bg-primary/10 transition-colors duration-1000" />
+            <div className="absolute inset-0 bg-chart-5/5 blur-[100px] rounded-full scale-150 group-hover:bg-chart-5/10 transition-colors duration-1000" />
 
             {/* Terminal Interface */}
             <div className="glass-terminal relative z-10 p-8 rounded-3xl overflow-hidden">

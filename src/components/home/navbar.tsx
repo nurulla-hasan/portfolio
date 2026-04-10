@@ -4,6 +4,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { User, Cpu, Briefcase, FolderGit2, Mail } from "lucide-react";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 
 const NAV_LINKS = [
@@ -20,7 +22,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -28,12 +30,29 @@ export default function Navbar() {
 
   return (
     <>
-      <header
-        className={`fixed left-1/2 -translate-x-1/2 z-100 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+      <motion.header
+        initial={false}
+        animate={{
+          top: isScrolled ? 20 : 0,
+          width: isScrolled ? "65%" : "100%",
+          paddingTop: isScrolled ? 12 : 20,
+          paddingBottom: isScrolled ? 12 : 20,
+          paddingLeft: isScrolled ? 32 : 40,
+          paddingRight: isScrolled ? 32 : 40,
+          borderRadius: isScrolled ? 100 : 0,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 150,
+          damping: 25,
+          mass: 1.2
+        }}
+        className={cn(
+          "fixed left-0 right-0 mx-auto z-100 border backdrop-blur-2xl transition-colors duration-700 overflow-hidden",
           isScrolled
-            ? "top-4 md:top-6 w-[95%] md:w-[90%] max-w-5xl bg-background/60 backdrop-blur-2xl py-1.5 md:py-2 px-4 md:px-6 border border-border/50 shadow-md rounded-full"
-            : "top-0 w-full bg-transparent py-4 md:py-6 px-4 border-transparent shadow-none rounded-none"
-        }`}
+            ? "bg-background/60 border-border/50 shadow-2xl"
+            : "bg-transparent border-transparent shadow-none"
+        )}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between overflow-hidden">
           
@@ -127,7 +146,7 @@ export default function Navbar() {
             <span className={`h-px bg-foreground transition-all duration-300 ${isMenuOpen ? "w-5 -rotate-45 -translate-y-0.5 bg-primary" : "w-2 group-hover:w-5"}`}></span>
           </button>
         </div>
-      </header>
+      </motion.header>
 
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 z-120 md:hidden transition-all duration-500 ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>

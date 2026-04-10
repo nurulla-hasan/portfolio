@@ -1,5 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+import * as React from "react";
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const SOCIALS = [
   { 
@@ -46,8 +49,34 @@ const SOCIALS = [
 ];
 
 export default function SocialSidebar() {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => setMounted(true), []);
+
   return (
-    <div className="fixed right-6 md:right-10 bottom-0 z-50 hidden md:flex flex-col items-center gap-8">
+    <div className="fixed right-6 md:right-10 bottom-[20%] z-50 hidden md:flex flex-col items-center gap-8">
+      {/* Theme Toggle Integrated */}
+      {mounted && (
+        <button
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="group relative flex items-center justify-center p-2 transition-all duration-300 hover:-translate-y-1"
+        >
+          <div className="absolute inset-0 bg-primary/0 rounded-full blur-md group-hover:bg-primary/20 transition-all duration-500" />
+          {theme === "dark" ? (
+            <Sun className="w-5 h-5 text-primary relative z-10" strokeWidth={1.5} />
+          ) : (
+            <Moon className="w-5 h-5 text-primary relative z-10" strokeWidth={1.5} />
+          )}
+          <span className="absolute right-12 px-3 py-1.5 rounded-md bg-background border border-border/40 text-[0.6rem] font-bold tracking-widest uppercase text-foreground opacity-0 pointer-events-none group-hover:opacity-100 group-hover:right-14 transition-all duration-300 whitespace-nowrap">
+            Theme: {theme === "dark" ? "Stealth" : "Bright"}
+          </span>
+        </button>
+      )}
+
+      {/* Small Divider */}
+      <div className="w-4 h-px bg-border/40" />
+
       {/* Decorative Line */}
       <div className="flex flex-col gap-6">
         {SOCIALS.map((social) => (

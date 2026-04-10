@@ -11,7 +11,7 @@ export default function Home() {
         {/* Global Architectural HUD Grid */}
         <div className="fixed inset-0 z-0 pointer-events-none">
           {/* Noise overlay */}
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03]" />
+          {/* <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03]" /> */}
           
           {/* Vertical Lines */}
           <div className="hidden lg:block absolute left-24 top-0 bottom-0 w-px bg-border/30 overflow-hidden">

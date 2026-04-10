@@ -27,13 +27,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-100 transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) ${
+      className={`fixed left-1/2 -translate-x-1/2 z-100 transition-all duration-700 cubic-bezier(0.16, 1, 0.3, 1) ${
         isScrolled
-          ? "bg-background/60 backdrop-blur-2xl py-6"
-          : "bg-transparent py-10"
+          ? "top-6 w-[90%] max-w-5xl bg-background/60 backdrop-blur-2xl py-1 border shadow-xs"
+          : "top-0 w-full bg-transparent py-8 px-0 border-transparent shadow-none"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-8 md:px-16 flex items-center justify-between overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between overflow-hidden">
         
         {/* Abstract Minimal Logo */}
         <Link href="/" className={`group flex items-center gap-5 ${uniqueFont.className}`}>

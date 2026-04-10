@@ -2,6 +2,7 @@
 
 import { Outfit } from "next/font/google";
 import { Terminal, ShieldCheck, Database, Layout } from "lucide-react";
+import SectionLayout from "../layout/section-layout";
 
 const uniqueFont = Outfit({
   subsets: ["latin"],
@@ -14,71 +15,9 @@ export default function About() {
       id="about"
       className="relative min-h-screen w-full flex items-center bg-transparent overflow-hidden"
     >
-      <style suppressHydrationWarning>{`
-        .glass-terminal {
-          background: rgba(var(--background), 0.2);
-          backdrop-filter: blur(20px);
-          border: 1px solid var(--border);
-          box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
-        }
-        .skill-tag {
-          background: var(--border);
-          transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .skill-tag:hover {
-          background: var(--primary);
-          color: var(--primary-foreground);
-          transform: translateY(-2px);
-          box-shadow: 0 0 15px var(--primary);
-        }
-        @keyframes scan-line {
-          0% { transform: translateY(-100%); }
-          100% { transform: translateY(400%); }
-        }
-        .scan-line {
-          height: 100px;
-          background: linear-gradient(to bottom, transparent, var(--primary), transparent);
-          opacity: 0.1;
-          animation: scan-line 8s linear infinite;
-        }
 
-        .outline-glitch {
-          color: transparent;
-          -webkit-text-stroke: 1.5px var(--border);
-          position: relative;
-          display: inline-block;
-          line-height: 1;
-        }
-        .outline-glitch::before, .outline-glitch::after {
-          content: attr(data-text);
-          position: absolute;
-          top: 0; left: 0;
-          width: 100%;
-          height: 100%;
-          color: transparent;
-          pointer-events: none;
-          opacity: 1;
-          z-index: 10;
-          display: block;
-        }
-        .outline-glitch::before {
-          -webkit-text-stroke: 2px var(--primary);
-          animation: cyber-glitch-1 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-        }
-        .outline-glitch::after {
-          -webkit-text-stroke: 2px var(--sidebar-primary);
-          animation: cyber-glitch-1 4.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse infinite;
-        }
-        @keyframes cyber-glitch-1 {
-          0% { clip-path: inset(20% 0 80% 0); transform: translate(-1px, 0.5px); }
-          20% { clip-path: inset(60% 0 10% 0); transform: translate(1px, -0.5px); }
-          40% { clip-path: inset(40% 0 50% 0); transform: translate(-1px, 1px); }
-          60% { clip-path: inset(80% 0 5% 0); transform: translate(1px, -1px); }
-          80% { clip-path: inset(10% 0 70% 0); transform: translate(-0.5px, 0.5px); }
-          100% { clip-path: inset(30% 0 50% 0); transform: translate(0.5px, -0.5px); }
-        }
-      `}</style>
 
+      {/* ========================= */}
       {/* Background Architectural HUD & Lines */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         {/* Horizontal Lines matched with Hero */}
@@ -95,8 +34,9 @@ export default function About() {
           />
         </div>
       </div>
+      {/* ========================= */}
 
-      <div className="max-w-7xl mx-auto px-8 relative z-10 w-full">
+      <SectionLayout className="relative z-10">
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-16 lg:gap-32 items-center">
           {/* Left Column: Story & Identity */}
           <div className="flex flex-col items-start w-full">
@@ -258,7 +198,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
+      </SectionLayout>
     </section>
   );
 }

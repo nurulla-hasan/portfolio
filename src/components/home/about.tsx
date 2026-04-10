@@ -90,7 +90,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 md:px-16 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-8  relative z-10 w-full">
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-16 lg:gap-32 items-center">
           
           {/* Left Column: Story & Identity */}

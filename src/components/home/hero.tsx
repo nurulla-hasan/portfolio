@@ -221,7 +221,7 @@ export default function Hero() {
           <div className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary" style={{ animation: 'walk-h 40s linear infinite 0s' }} />
         </div>
 
-        <section className="max-w-7xl mx-auto px-8 md:px-16 relative z-10 w-full mt-20 sm:mt-0">
+        <section className="max-w-7xl mx-auto px-8  relative z-10 w-full mt-20 sm:mt-0">
           <div className="w-full">
             
             <div className="anim-element flex items-center gap-4 mb-8 md:mb-12">

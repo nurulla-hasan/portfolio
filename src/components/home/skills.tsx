@@ -91,7 +91,7 @@ export default function Skills() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-8 md:px-16 relative z-10 w-full py-10 scale-95">
+      <div className="max-w-7xl mx-auto px-8  relative z-10 w-full py-10 scale-95">
         {/* Section Header */}
         <div className="flex items-center justify-between mb-10 md:mb-16 relative">
           <div className="flex flex-col">

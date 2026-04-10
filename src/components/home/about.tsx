@@ -108,7 +108,7 @@ export default function About() {
             </div>
 
             <h2
-              className={`${uniqueFont.className} text-[clamp(2rem,4vw,4rem)] leading-[0.95] font-black tracking-tighter uppercase mb-4 text-foreground`}
+              className={`${uniqueFont.className} text-[clamp(2rem,4vw,4rem)] leading-[0.95] font-black tracking-wide uppercase mb-4 text-foreground`}
             >
               Building <br />
               <span className="shimmer-text">Robust</span> <br />

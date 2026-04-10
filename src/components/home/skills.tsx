@@ -103,7 +103,7 @@ export default function Skills() {
             </div>
 
             <h2
-              className={`${uniqueFont.className} text-[clamp(2rem,3.5vw,3.5rem)] leading-none font-extrabold tracking-tighter uppercase text-foreground`}
+              className={`${uniqueFont.className} text-[clamp(2rem,3.5vw,3.5rem)] leading-none font-extrabold tracking-wide uppercase text-foreground`}
             >
               <span className="shimmer-text block mb-1">
                 System

@@ -35,7 +35,15 @@ export default function CustomCursor() {
 
     window.addEventListener("mousemove", moveCursor);
     return () => window.removeEventListener("mousemove", moveCursor);
-  });
+  }, [mouseX, mouseY]);
+
+  // Trail decay effect - gradually remove points when stopped
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPoints((prev) => (prev.length > 0 ? prev.slice(0, -1) : prev));
+    }, 40);
+    return () => clearInterval(interval);
+  }, []);
 
   // Create SVG path from points
   const createPath = () => {
@@ -85,8 +93,8 @@ export default function CustomCursor() {
       <motion.div
         className="absolute top-0 left-0 rounded-full border border-primary/40 mix-blend-difference bg-white"
         animate={{
-          width: isPointer ? 100 : 0,
-          height: isPointer ? 100 : 0,
+          width: isPointer ? 60 : 0,
+          height: isPointer ? 60 : 0,
           opacity: isPointer ? 1 : 0,
         }}
         transition={{ type: "spring", damping: 20, stiffness: 200 }}

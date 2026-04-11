@@ -61,7 +61,7 @@ export default function Navbar() {
         }}
         className={cn(
           "fixed left-0 right-0 mx-auto transition-colors duration-700 overflow-hidden",
-          isMenuOpen ? "z-200" : "z-100",
+          isMenuOpen ? "z-50" : "z-30",
           isScrolled
             ? "bg-background/60 border-border/50 shadow-2xl backdrop-blur-2xl"
             : "bg-transparent border-transparent shadow-none"
@@ -103,12 +103,11 @@ export default function Navbar() {
           {/* Mobile Menu Toggle */}
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden relative z-210 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+            className="md:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
           >
             <motion.span 
               animate={isMenuOpen ? { rotate: 45, y: 7.5 } : { rotate: 0, y: 0 }}
-              className="w-6 h-[1.5px] bg-foreground transition-colors"
-              style={{ backgroundColor: isMenuOpen ? 'hsl(var(--primary))' : 'currentColor' }}
+              className={cn("w-6 h-[1.5px] transition-colors", isMenuOpen ? "bg-primary" : "bg-foreground")}
             />
             <motion.span 
               animate={isMenuOpen ? { opacity: 0, x: 10 } : { opacity: 1, x: 0 }}
@@ -116,8 +115,7 @@ export default function Navbar() {
             />
             <motion.span 
               animate={isMenuOpen ? { rotate: -45, y: -7.5 } : { rotate: 0, y: 0 }}
-              className="w-6 h-[1.5px] bg-foreground transition-colors"
-              style={{ backgroundColor: isMenuOpen ? 'hsl(var(--primary))' : 'currentColor' }}
+              className={cn("w-6 h-[1.5px] transition-colors", isMenuOpen ? "bg-primary" : "bg-foreground")}
             />
           </button>
         </div>
@@ -126,7 +124,7 @@ export default function Navbar() {
       {/* Mobile Menu - Liquid Sidebar */}
       <AnimatePresence>
         {isMenuOpen && (
-          <div className="fixed inset-0 z-150 md:hidden">
+          <div className="fixed inset-0 z-40 md:hidden">
             {/* Backdrop */}
             <motion.div 
               initial={{ opacity: 0 }}

@@ -482,9 +482,31 @@ body {
     @apply font-sans;
     color-scheme: dark;
   }
+  * {
+    cursor: none !important;
+  }
   ::selection {
     background: var(--chart-4);
   }
+
+  /* Liquid Gooey Filter */
+  .gooey {
+    filter: url('#gooey');
+  }
+}
+
+@layer utilities {
+  .anim-line-h {
+    animation: walk-h 25s linear infinite;
+  }
+}
+
+/* Hidden SVG Filters for UI Effects */
+.svg-filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 
 /* Custom Scrollbar Styles */

@@ -63,7 +63,7 @@ export default function Hero() {
         </div>
         {/* ========================= */}
 
-        <SectionLayout className="relative z-10 mt-12 md:mt-33">
+        <SectionLayout className="relative z-10 mt-12 md:mt-20">
           <div className="anim-element flex items-center gap-4 mb-8 md:mb-12">
             <span className="w-8 md:w-12 h-px bg-border block" />
             <span className="text-[0.55rem] md:text-[0.65rem] font-medium tracking-[0.4em] text-muted-foreground uppercase">

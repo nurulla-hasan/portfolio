@@ -483,8 +483,7 @@ body {
     color-scheme: dark;
   }
   ::selection {
-    background: var(--primary);
-    color: var(--primary);
+    background: var(--chart-4);
   }
 }
 

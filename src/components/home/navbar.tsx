@@ -71,8 +71,8 @@ export default function Navbar() {
         animate={{
           top: isScrolled ? (isMobile ? 0 : 20) : 0,
           width: isScrolled ? (isMobile ? "100%" : "65%") : "100%",
-          paddingTop: isScrolled ? (isMobile ? 8 : 12) : (isMobile ? 10 : 20),
-          paddingBottom: isScrolled ? (isMobile ? 8 : 12) : (isMobile ? 10 : 20),
+          paddingTop: isScrolled ? (isMobile ? 8 : 10) : (isMobile ? 10 : 14),
+          paddingBottom: isScrolled ? (isMobile ? 8 : 10) : (isMobile ? 10 : 14),
           paddingLeft: isScrolled ? (isMobile ? 20 : 32) : (isMobile ? 20 : 40),
           paddingRight: isScrolled ? (isMobile ? 20 : 32) : (isMobile ? 20 : 40),
           borderRadius: isScrolled ? (isMobile ? 0 : 100) : 0,
@@ -97,13 +97,53 @@ export default function Navbar() {
             onClick={(e) => handleScroll(e, "#home")}
             className="group flex items-center gap-3 md:gap-5"
           >
-            <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
-              <div className="absolute inset-0 border border-border/40 rounded-md group-hover:border-primary/50 transition-all duration-500 group-hover:rotate-90 group-hover:scale-110" />
-              <div className="relative w-1 h-1 md:w-1.5 md:h-1.5 bg-foreground rounded-full group-hover:bg-primary transition-all duration-500" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-sm md:text-base font-black tracking-[0.3em] uppercase leading-none">Nurulla</span>
-              <span className="text-[0.4rem] font-bold tracking-[0.4em] uppercase text-muted-foreground mt-1">Creative Engineer</span>
+            <div className="relative flex items-center group cursor-pointer">
+              {/* Permanent Magnetic Orbit System */}
+              <div className="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                {/* Orbital Path (Shadow) */}
+                <div className="absolute inset-0 border border-primary/20 rounded-full transition-colors duration-700" />
+                
+                {/* Orbital Satellite 1: The Square (Fast by default) */}
+                <div className="absolute inset-0 animate-[slow-rotate_3s_linear_infinite]">
+                  <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-primary rounded-sm shadow-[0_0_8px_var(--primary)]" />
+                </div>
+
+                {/* Orbital Satellite 2: The Circle (Fast by default) */}
+                <div className="absolute inset-2 animate-[slow-rotate_4s_linear_infinite_reverse]">
+                  <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 border border-primary rounded-full shadow-[0_0_8px_var(--primary)]" />
+                </div>
+
+                {/* The Core: Glowing Monolith (Active by default) */}
+                <div className="relative z-10 w-4 h-5 border-x border-primary flex items-center justify-center overflow-hidden shadow-[0_0_15px_rgba(var(--primary),0.1)]">
+                  <div className="absolute inset-0 bg-primary/20" />
+                  <span className="text-[0.6rem] font-black text-primary">N</span>
+                  
+                  {/* Internal Glow Pulse */}
+                  <div className="absolute inset-0 bg-linear-to-t from-transparent via-primary/30 to-transparent animate-[walk-v_2s_linear_infinite]" />
+                </div>
+
+                {/* HUD Coordinates (Visible by default) */}
+                <div className="absolute -right-1 top-2 flex flex-col gap-0.5 translate-x-0">
+                  <div className="w-2.5 h-[0.5px] bg-primary" />
+                  <div className="w-1.5 h-[0.5px] bg-primary/60" />
+                </div>
+              </div>
+
+              {/* Identity Typo (Enhanced by default) */}
+              <div className="flex flex-col ml-4">
+                <div className="relative overflow-hidden">
+                  <span className="text-sm md:text-xl font-black tracking-[0.3em] uppercase text-foreground">
+                    Nurulla
+                  </span>
+                  {/* Permanent Underline Flare */}
+                  <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-primary/60 to-transparent translate-x-0" />
+                </div>
+                <div className="flex items-center gap-2 mt-1">
+                  <span className="text-[0.4rem] font-bold tracking-[0.4em] uppercase text-primary/80">
+                    Architecting Digital
+                  </span>
+                </div>
+              </div>
             </div>
           </Link>
 

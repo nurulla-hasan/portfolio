@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 "use client";
 
@@ -40,6 +41,29 @@ export default function Navbar() {
     };
   }, []);
 
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    // Only handle internal hash links
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.replace("#", "");
+      const targetElement = document.getElementById(targetId);
+      
+      const lenis = (window as any).lenis;
+      if (targetElement && lenis) {
+        lenis.scrollTo(targetElement, {
+          offset: 0,
+          duration: 1.5,
+          easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        });
+      } else if (targetElement) {
+        // Fallback if lenis is not available
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+      
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <>
       <motion.header
@@ -70,7 +94,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link 
             href="#home" 
-            onClick={() => setIsMenuOpen(false)}
+            onClick={(e) => handleScroll(e, "#home")}
             className="group flex items-center gap-3 md:gap-5"
           >
             <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
@@ -89,6 +113,7 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
+                onClick={(e) => handleScroll(e, link.href)}
                 className="group relative py-2 text-[0.7rem] font-medium tracking-[0.2em] text-muted-foreground uppercase transition-all duration-500 hover:text-foreground"
               >
                 {link.label}
@@ -155,7 +180,7 @@ export default function Navbar() {
                   >
                     <Link
                       href={link.href}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={(e) => handleScroll(e, link.href)}
                       className="group flex items-center gap-4 py-2"
                     >
                       <div className="w-10 h-10 rounded-2xl bg-muted/30 border border-border/20 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-500">

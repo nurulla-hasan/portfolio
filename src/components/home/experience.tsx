@@ -70,12 +70,6 @@ export default function Experience() {
             </span>
           </div>
           <h2 className="relative text-[clamp(2.5rem,6vw,4rem)] leading-[0.85] font-bold tracking-tighter uppercase text-foreground group">
-            <div className="flex items-center gap-3 mb-4 overflow-hidden">
-               <div className="w-12 h-px bg-primary/30 group-hover:w-20 transition-all duration-1000" />
-               <span className="text-[0.5rem] font-black tracking-[0.8em] text-primary/40 uppercase animate-pulse">
-                 Core_Archives
-               </span>
-            </div>
             
             <span className="block opacity-60 group-hover:opacity-100 transition-opacity duration-700">The Professional</span>
             <div className="relative mt-2">

@@ -47,10 +47,10 @@ export default function Navbar() {
         animate={{
           top: isScrolled ? (isMobile ? 0 : 20) : 0,
           width: isScrolled ? (isMobile ? "100%" : "65%") : "100%",
-          paddingTop: isScrolled ? (isMobile ? 12 : 12) : (isMobile ? 14 : 20),
-          paddingBottom: isScrolled ? (isMobile ? 12 : 12) : (isMobile ? 14 : 20),
-          paddingLeft: isScrolled ? (isMobile ? 24 : 32) : (isMobile ? 24 : 40),
-          paddingRight: isScrolled ? (isMobile ? 24 : 32) : (isMobile ? 24 : 40),
+          paddingTop: isScrolled ? (isMobile ? 8 : 12) : (isMobile ? 10 : 20),
+          paddingBottom: isScrolled ? (isMobile ? 8 : 12) : (isMobile ? 10 : 20),
+          paddingLeft: isScrolled ? (isMobile ? 20 : 32) : (isMobile ? 20 : 40),
+          paddingRight: isScrolled ? (isMobile ? 20 : 32) : (isMobile ? 20 : 40),
           borderRadius: isScrolled ? (isMobile ? 0 : 100) : 0,
         }}
         transition={{

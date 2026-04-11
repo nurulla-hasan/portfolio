@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { User, Cpu, Briefcase, FolderGit2, Mail } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 
@@ -161,77 +161,132 @@ export default function Navbar() {
       </motion.header>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 z-120 md:hidden transition-all duration-500 ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
-        {/* Backdrop Backdrop */}
-        <div 
-          className="absolute inset-0 bg-background/40 backdrop-blur-sm"
-          onClick={() => setIsMenuOpen(false)}
-        />
-        
-        {/* Slide-in Panel */}
-        <div className={`absolute right-0 top-0 h-full w-[85%] max-w-sm bg-background border-l border-border/40 shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
-          
-          {/* Panel Header */}
-          <div className="flex items-center justify-between p-6 border-b border-border/20">
-            <span className="text-[0.6rem] font-bold tracking-[0.4em] uppercase text-muted-foreground">Navigation</span>
-            <button 
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 z-120 md:hidden"
+          >
+            {/* Backdrop with extreme blur */}
+            <motion.div 
+              initial={{ backdropFilter: "blur(0px)", backgroundColor: "rgba(0,0,0,0)" }}
+              animate={{ backdropFilter: "blur(12px)", backgroundColor: "rgba(0,0,0,0.6)" }}
+              exit={{ backdropFilter: "blur(0px)", backgroundColor: "rgba(0,0,0,0)" }}
+              className="absolute inset-0"
               onClick={() => setIsMenuOpen(false)}
-              className="w-10 h-10 flex items-center justify-center rounded-full border border-border/40 hover:bg-muted transition-colors"
+            />
+            
+            {/* Slide-in Panel */}
+            <motion.div 
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 30, stiffness: 180, mass: 0.8 }}
+              className="absolute right-0 top-0 h-full w-[85%] sm:w-112.5 bg-background/95 backdrop-blur-xl border-l border-border/50 shadow-[-30px_0_80px_rgba(0,0,0,0.4)] flex flex-col overflow-hidden"
             >
-              <div className="relative w-4 h-4">
-                <span className="absolute top-1/2 left-0 w-full h-px bg-foreground rotate-45"></span>
-                <span className="absolute top-1/2 left-0 w-full h-px bg-foreground -rotate-45"></span>
+              {/* Architectural Pattern Background */}
+              <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+                <div className="absolute h-full w-px left-12 bg-foreground" />
+                <div className="absolute h-full w-px left-24 bg-foreground" />
+                <div className="absolute w-full h-px top-24 bg-foreground" />
+                <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, var(--foreground) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
               </div>
-            </button>
-          </div>
 
-          {/* Menu Links */}
-          <nav className="flex-1 flex flex-col p-8 gap-8">
-            {NAV_LINKS.map((link, i) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                onClick={(e) => {
-                  if ((window as any).lenis) {
-                    e.preventDefault();
-                    (window as any).lenis.scrollTo(link.href, { duration: 2 });
-                  }
-                  setIsMenuOpen(false);
-                }}
-                className="group flex flex-col gap-1"
-                style={{ transitionDelay: `${i * 50}ms` }}
-              >
-                <span className="text-[0.55rem] font-bold tracking-[0.3em] text-primary">0{i+1}</span>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <link.icon className="w-6 h-6 text-primary/60 group-hover:text-primary transition-colors" />
-                    <span className="text-2xl sm:text-3xl font-medium tracking-tight uppercase text-foreground group-hover:pl-2 transition-all duration-300">
-                      {link.label}
-                    </span>
-                  </div>                  <div className="w-8 h-px bg-border group-hover:w-12 group-hover:bg-primary transition-all duration-300" />
+              {/* Panel Header */}
+              <div className="relative z-10 flex items-center justify-between p-8 md:p-10 border-b border-border/10">
+                <div className="flex flex-col">
+                  <span className="text-[0.6rem] font-black tracking-[0.5em] uppercase text-primary mb-1">Navigation</span>
+                  <span className="text-[0.45rem] font-bold tracking-[0.3em] uppercase text-muted-foreground/60">System Version 2.0.4</span>
                 </div>
-              </Link>
-            ))}
-          </nav>
+                <button 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="group relative w-12 h-12 flex items-center justify-center rounded-full border border-border/20 hover:border-primary/50 transition-all duration-500 overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-primary/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                  <div className="relative w-4 h-4 text-foreground group-hover:text-primary transition-colors">
+                    <span className="absolute top-1/2 left-0 w-full h-px bg-current rotate-45"></span>
+                    <span className="absolute top-1/2 left-0 w-full h-px bg-current -rotate-45"></span>
+                  </div>
+                </button>
+              </div>
 
-          {/* Panel Footer */}
-          <div className="p-8 border-t border-border/20 bg-muted/10">
-            <a
-              href="/resume"
-              className="flex items-center justify-center w-full py-4 rounded-xl border border-primary/30 bg-primary/5 text-[0.7rem] font-bold tracking-[0.3em] uppercase text-primary hover:bg-primary hover:text-white transition-all duration-500"
-            >
-              Resume
-            </a>
-            <div className="mt-8 flex flex-col gap-2">
-               <span className="text-[0.5rem] font-bold tracking-[0.2em] text-muted-foreground/40 uppercase">© 2026 Nurulla Hasan</span>
-               <span className="text-[0.5rem] font-medium tracking-widest text-muted-foreground/30 uppercase">Built with Next.js & TypeScript</span>
-            </div>
-          </div>
+              {/* Menu Links */}
+              <nav className="relative z-10 flex-1 flex flex-col justify-center p-8 md:p-12 gap-6">
+                {NAV_LINKS.map((link, i) => (
+                  <motion.div
+                    key={link.label}
+                    initial={{ x: 50, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.1 + i * 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={(e) => {
+                        if ((window as any).lenis) {
+                          e.preventDefault();
+                          (window as any).lenis.scrollTo(link.href, { duration: 2 });
+                        }
+                        setIsMenuOpen(false);
+                      }}
+                      className="group flex flex-col"
+                    >
+                      <div className="flex items-baseline gap-4">
+                         <span className="text-[0.6rem] font-mono font-bold text-primary/40 group-hover:text-primary transition-colors duration-500">
+                           0{i+1}_
+                         </span>
+                         <div className="flex items-center gap-6 overflow-hidden">
+                           <span className="text-4xl md:text-5xl font-black tracking-tighter uppercase text-muted-foreground group-hover:text-foreground transition-all duration-500 inline-block group-hover:translate-x-1">
+                             {link.label}
+                           </span>
+                           <div className="h-px w-0 bg-primary group-hover:w-20 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                         </div>
+                      </div>
+                      <div className="mt-1 h-px w-full bg-border/10 overflow-hidden">
+                        <div className="h-full w-full bg-linear-to-r from-primary/20 via-primary to-transparent -translate-x-full group-hover:translate-x-0 transition-transform duration-700" />
+                      </div>
+                    </Link>
+                  </motion.div>
+                ))}
+              </nav>
 
-          {/* Aesthetic background elements for panel */}
-          <div className="absolute bottom-0 left-0 w-full h-1/2 bg-linear-to-t from-primary/5 to-transparent pointer-events-none" />
-        </div>
-      </div>
+              {/* Panel Footer */}
+              <div className="relative z-10 p-8 md:p-12 border-t border-border/10 bg-muted/5">
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <a
+                    href="/resume"
+                    className="relative group flex items-center justify-center w-full py-5 rounded-2xl border border-primary/20 bg-primary/5 overflow-hidden transition-all duration-500"
+                  >
+                    <div className="absolute inset-0 bg-linear-to-r from-primary/10 via-primary/20 to-primary/10 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                    <span className="relative z-10 text-[0.7rem] font-black tracking-[0.4em] uppercase text-primary group-hover:text-foreground transition-colors">
+                      Download_Resume.PDF
+                    </span>
+                  </a>
+                  
+                  <div className="mt-10 flex flex-col gap-3">
+                    <div className="flex items-center gap-2 mb-2">
+                       <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                       <span className="text-[0.55rem] font-black tracking-[0.3em] uppercase text-muted-foreground/80">Available for projects</span>
+                    </div>
+                     <span className="text-[0.5rem] font-bold tracking-[0.2em] text-muted-foreground/30 uppercase">© 2026 Crafted with precision_</span>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Architectural accent */}
+              <div className="absolute bottom-0 right-0 w-32 h-32 opacity-[0.05] pointer-events-none translate-x-12 translate-y-12">
+                 <div className="absolute inset-0 border-20 border-primary rounded-full" />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <style jsx>{`
         .glass-card {

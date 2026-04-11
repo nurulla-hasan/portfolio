@@ -41,10 +41,10 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative min-h-screen overflow-hidden bg-transparent"
+      className="relative min-h-screen overflow-hidden bg-transparent border"
     >
       {/* Synchronized Horizontal Lines */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+      {/* <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute left-0 right-0 top-[12%] h-px bg-border/20 overflow-hidden">
           <div
             className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary"
@@ -57,7 +57,7 @@ export default function Experience() {
             style={{ animation: "walk-h 35s linear infinite 1s" }}
           />
         </div>
-      </div>
+      </div> */}
       {/* ======================== */}
 
       <SectionLayout className="relative z-10 mt-12 md:mt-33">

@@ -8,14 +8,13 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative min-h-screen w-full bg-transparent overflow-hidden"
+      className="relative min-h-screen w-full bg-transparent overflow-hidden border"
     >
 
 
       {/* ========================= */}
       {/* Background Architectural HUD & Lines */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        {/* Horizontal Lines matched with Hero */}
+      {/* <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute left-0 right-0 top-[12%] h-px bg-border/20 overflow-hidden">
           <div
             className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary"
@@ -28,7 +27,7 @@ export default function About() {
             style={{ animation: "walk-h 35s linear infinite 1s" }}
           />
         </div>
-      </div>
+      </div> */}
       {/* ========================= */}
 
       <SectionLayout className="relative z-10 mt-12 md:mt-33">

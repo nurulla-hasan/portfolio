@@ -39,11 +39,11 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative min-h-screen w-full bg-transparent overflow-hidden"
+      className="relative min-h-screen w-full bg-transparent overflow-hidden border"
     >
       {/* ======================== */}
       {/* Synchronized Horizontal Lines */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+      {/* <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute left-0 right-0 top-[12%] h-px bg-border/20 overflow-hidden">
           <div
             className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary"
@@ -56,7 +56,7 @@ export default function Skills() {
             style={{ animation: "walk-h 35s linear infinite 1s" }}
           />
         </div>
-      </div>
+      </div> */}
       {/* ======================== */}
 
       <SectionLayout className="relative z-10 mt-12 md:mt-33">
@@ -98,7 +98,7 @@ export default function Skills() {
           {SKILL_GROUPS.map((group) => (
             <div
               key={group.id}
-              className="skill-card relative rounded-2xl border border-border/40 bg-background/30 backdrop-blur-sm p-6 flex flex-col gap-5 overflow-hidden group cursor-default"
+              className="skill-card relative rounded-2xl border bg-background/30 backdrop-blur-sm p-6 flex flex-col gap-5 overflow-hidden group cursor-default"
             >
               {/* Top accent line */}
               <div

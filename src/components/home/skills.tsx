@@ -94,7 +94,7 @@ export default function Skills() {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-10">
           {SKILL_GROUPS.map((group) => (
             <div
               key={group.id}

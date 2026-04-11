@@ -69,11 +69,29 @@ export default function Experience() {
               03. History_Log
             </span>
           </div>
-          <h2 className="text-[clamp(2.5rem,6vw,4rem)] leading-[0.9] font-bold tracking-wide uppercase text-foreground">
-            Experience{" "}
-            <span className="text-sm font-mono text-muted-foreground tracking-widest">
-              [RECORD_01]
-            </span>
+          <h2 className="relative text-[clamp(2.5rem,6vw,4rem)] leading-[0.85] font-bold tracking-tighter uppercase text-foreground group">
+            <div className="flex items-center gap-3 mb-4 overflow-hidden">
+               <div className="w-12 h-px bg-primary/30 group-hover:w-20 transition-all duration-1000" />
+               <span className="text-[0.5rem] font-black tracking-[0.8em] text-primary/40 uppercase animate-pulse">
+                 Core_Archives
+               </span>
+            </div>
+            
+            <span className="block opacity-60 group-hover:opacity-100 transition-opacity duration-700">The Professional</span>
+            <div className="relative mt-2">
+              <span 
+                className="outline-glitch shimmer-text inline-block" 
+                data-text="Experience"
+              >
+                Experience
+              </span>
+              
+              {/* Floating ID Tag */}
+              <div className="absolute -top-4 -right-12 md:-right-20 hidden md:flex flex-col gap-1 border-l border-primary/20 pl-4 py-1">
+                 <span className="text-[0.4rem] font-mono text-primary/40 tracking-widest">UID: 89SH-26</span>
+                 <span className="text-[0.4rem] font-mono text-primary/40 tracking-widest whitespace-nowrap">STATUS: ENCRYPTED // VERIFIED</span>
+              </div>
+            </div>
           </h2>
         </div>
 

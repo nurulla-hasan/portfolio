@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 "use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { User, Cpu, Briefcase, FolderGit2, Mail } from "lucide-react";
+import { User, Cpu, Briefcase, FolderGit2, Mail, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -60,231 +60,141 @@ export default function Navbar() {
           mass: 1.2
         }}
         className={cn(
-          "fixed left-0 right-0 mx-auto z-100 transition-colors duration-700 overflow-hidden",
+          "fixed left-0 right-0 mx-auto transition-colors duration-700 overflow-hidden",
+          isMenuOpen ? "z-200" : "z-100",
           isScrolled
             ? "bg-background/60 border-border/50 shadow-2xl backdrop-blur-2xl"
             : "bg-transparent border-transparent shadow-none"
         )}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between overflow-hidden">
-          
-          {/* Abstract Minimal Logo */}
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link 
             href="#home" 
-            onClick={(e) => {
-              if ((window as any).lenis) {
-                e.preventDefault();
-                (window as any).lenis.scrollTo("#home", {
-                  duration: 2.5,
-                });
-              }
-              setIsMenuOpen(false);
-            }}
-          className="group flex items-center gap-3 md:gap-5"
+            onClick={() => setIsMenuOpen(false)}
+            className="group flex items-center gap-3 md:gap-5"
           >
             <div className="relative w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
-              {/* Architectural Crosshairs */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-1 bg-muted-foreground/40 group-hover:h-2 group-hover:bg-primary transition-all duration-500" />
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-1 bg-muted-foreground/40 group-hover:h-2 group-hover:bg-primary transition-all duration-500" />
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 h-px w-1 bg-muted-foreground/40 group-hover:w-2 group-hover:bg-primary transition-all duration-500" />
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 h-px w-1 bg-muted-foreground/40 group-hover:w-2 group-hover:bg-primary transition-all duration-500" />
-
-              {/* Rotating Frames */}
-              <div className="absolute inset-1.5 md:inset-2 border border-border/40 rounded-md group-hover:border-primary/50 transition-all duration-500 group-hover:rotate-90 group-hover:scale-110" />
-              <div className="absolute inset-1.5 md:inset-2 border border-border/20 rounded-md rotate-45 group-hover:border-sidebar-primary/50 transition-all duration-700 delay-100 group-hover:rotate-135" />
-              
-              {/* Kinetic Core */}
-              <div className="relative w-1 h-1 md:w-1.5 md:h-1.5 bg-foreground rounded-full group-hover:bg-primary transition-all duration-500">
-                 <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-0 group-hover:opacity-100" />
-                 <div className="absolute -inset-1 border border-primary/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500" />
-              </div>
+              <div className="absolute inset-0 border border-border/40 rounded-md group-hover:border-primary/50 transition-all duration-500 group-hover:rotate-90 group-hover:scale-110" />
+              <div className="relative w-1 h-1 md:w-1.5 md:h-1.5 bg-foreground rounded-full group-hover:bg-primary transition-all duration-500" />
             </div>
             <div className="flex flex-col">
-              <span className="text-sm md:text-base font-black tracking-[0.3em] md:tracking-[0.4em] uppercase text-foreground group-hover:text-primary transition-colors duration-500 leading-none">
-                Nurulla
-              </span>
-              <span className="text-[0.4rem] md:text-[0.45rem] font-bold tracking-[0.4em] md:tracking-[0.5em] uppercase text-muted-foreground group-hover:text-foreground transition-colors duration-500 mt-1">
-                Creative Engineer
-              </span>
+              <span className="text-sm md:text-base font-black tracking-[0.3em] uppercase leading-none">Nurulla</span>
+              <span className="text-[0.4rem] font-bold tracking-[0.4em] uppercase text-muted-foreground mt-1">Creative Engineer</span>
             </div>
           </Link>
 
-          {/* Minimal Nav */}
-          <nav className="hidden md:flex items-center gap-12">
-            <div className="flex items-center gap-10 border-r border-border/40 pr-12">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  onClick={(e) => {
-                    if ((window as any).lenis) {
-                      e.preventDefault();
-                      (window as any).lenis.scrollTo(link.href, {
-                        duration: 2.5, // Even slower and more elegant
-                      });
-                    }
-                  }}
-                  className="group relative py-2 overflow-hidden"
-                >
-                  <span className="text-[0.7rem] font-medium tracking-[0.2em] text-muted-foreground uppercase transition-all duration-500 group-hover:text-foreground group-hover:-translate-y-0.5 block">
-                    {link.label}
-                  </span>
-                  {/* Neon Indicator */}
-                  <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-primary to-sidebar-primary translate-x-[-105%] group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-                </Link>
-              ))}
-            </div>
-
-            <a
-              href="/resume"
-              className="relative group px-6 py-1 overflow-hidden border border-border/60 hover:border-primary/50 transition-all duration-700 glass-card rounded-full"
-            >
-              <div className="absolute inset-0 bg-linear-to-r from-destructive/10 via-primary/10 to-sidebar-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-shimmer scale-150" />
-              <span className="relative z-10 text-[0.65rem] font-bold tracking-[0.25em] text-foreground/80 group-hover:text-primary uppercase transition-colors duration-500">
-                Resume
-              </span>
-              <div className="absolute inset-0 border border-transparent group-hover:border-primary/30 transition-all duration-500" />
-              <div className="absolute inset-0 bg-linear-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-10">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="group relative py-2 text-[0.7rem] font-medium tracking-[0.2em] text-muted-foreground uppercase transition-all duration-500 hover:text-foreground"
+              >
+                {link.label}
+                <div className="absolute bottom-0 left-0 w-full h-px bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              </Link>
+            ))}
+            <a href="/resume" className="px-5 py-1.5 rounded-full border bg-primary text-primary-foreground text-[0.65rem] font-bold tracking-[0.2em] uppercase hover:bg-transparent hover:text-primary transition-all duration-500 shadow-lg shadow-primary/20 hover:shadow-none">
+              Resume
             </a>
           </nav>
 
           {/* Mobile Menu Toggle */}
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden group relative z-110 flex flex-col items-end gap-1 p-2 transition-all duration-300 active:scale-95"
+            className="md:hidden relative z-210 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
           >
-            <span className={`h-px bg-foreground transition-all duration-300 ${isMenuOpen ? "w-5 rotate-45 translate-y-1.5 bg-primary" : "w-5"}`}></span>
-            <span className={`w-3 h-px bg-muted-foreground transition-all duration-300 ${isMenuOpen ? "opacity-0" : "opacity-100"}`}></span>
-            <span className={`h-px bg-foreground transition-all duration-300 ${isMenuOpen ? "w-5 -rotate-45 -translate-y-0.5 bg-primary" : "w-2 group-hover:w-5"}`}></span>
+            <motion.span 
+              animate={isMenuOpen ? { rotate: 45, y: 7.5 } : { rotate: 0, y: 0 }}
+              className="w-6 h-[1.5px] bg-foreground transition-colors"
+              style={{ backgroundColor: isMenuOpen ? 'hsl(var(--primary))' : 'currentColor' }}
+            />
+            <motion.span 
+              animate={isMenuOpen ? { opacity: 0, x: 10 } : { opacity: 1, x: 0 }}
+              className="w-4 h-[1.5px] bg-foreground ml-auto"
+            />
+            <motion.span 
+              animate={isMenuOpen ? { rotate: -45, y: -7.5 } : { rotate: 0, y: 0 }}
+              className="w-6 h-[1.5px] bg-foreground transition-colors"
+              style={{ backgroundColor: isMenuOpen ? 'hsl(var(--primary))' : 'currentColor' }}
+            />
           </button>
         </div>
       </motion.header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu - Liquid Sidebar */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-120 md:hidden"
-          >
-            {/* Backdrop with extreme blur */}
+          <div className="fixed inset-0 z-150 md:hidden">
+            {/* Backdrop */}
             <motion.div 
-              initial={{ backdropFilter: "blur(0px)", backgroundColor: "rgba(0,0,0,0)" }}
-              animate={{ backdropFilter: "blur(12px)", backgroundColor: "rgba(0,0,0,0.6)" }}
-              exit={{ backdropFilter: "blur(0px)", backgroundColor: "rgba(0,0,0,0)" }}
-              className="absolute inset-0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               onClick={() => setIsMenuOpen(false)}
+              className="absolute inset-0 bg-background/20 backdrop-blur-sm"
             />
-            
-            {/* Slide-in Panel */}
+
+            {/* Sidebar */}
             <motion.div 
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 30, stiffness: 180, mass: 0.8 }}
-              className="absolute right-0 top-0 h-full w-[85%] sm:w-112.5 bg-background/95 backdrop-blur-xl border-l border-border/50 shadow-[-30px_0_80px_rgba(0,0,0,0.4)] flex flex-col overflow-hidden"
+              initial={{ x: "100%", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: "100%", opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 150 }}
+              className="absolute right-0 top-0 h-full w-[75%] max-w-[320px] bg-background/90 backdrop-blur-3xl border-l border-border/40 shadow-[-20px_0_50px_rgba(0,0,0,0.1)] flex flex-col"
             >
-              {/* Architectural Pattern Background */}
-              <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-                <div className="absolute h-full w-px left-12 bg-foreground" />
-                <div className="absolute h-full w-px left-24 bg-foreground" />
-                <div className="absolute w-full h-px top-24 bg-foreground" />
-                <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle, var(--foreground) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-              </div>
-
-              {/* Panel Header */}
-              <div className="relative z-10 flex items-center justify-between p-8 md:p-10 border-b border-border/10">
-                <div className="flex flex-col">
-                  <span className="text-[0.6rem] font-black tracking-[0.5em] uppercase text-primary mb-1">Navigation</span>
-                  <span className="text-[0.45rem] font-bold tracking-[0.3em] uppercase text-muted-foreground/60">System Version 2.0.4</span>
-                </div>
-                <button 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="group relative w-12 h-12 flex items-center justify-center rounded-full border border-border/20 hover:border-primary/50 transition-all duration-500 overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-primary/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                  <div className="relative w-4 h-4 text-foreground group-hover:text-primary transition-colors">
-                    <span className="absolute top-1/2 left-0 w-full h-px bg-current rotate-45"></span>
-                    <span className="absolute top-1/2 left-0 w-full h-px bg-current -rotate-45"></span>
-                  </div>
-                </button>
-              </div>
-
-              {/* Menu Links */}
-              <nav className="relative z-10 flex-1 flex flex-col justify-center p-8 md:p-12 gap-6">
+              <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: `radial-gradient(var(--foreground) 1px, transparent 1px)`, backgroundSize: '20px 20px' }} />
+              
+              <div className="relative z-10 flex-1 flex flex-col justify-center px-8 gap-6 pt-20">
+                <span className="text-[0.6rem] font-bold tracking-[0.5em] uppercase text-primary mb-2">Navigation</span>
                 {NAV_LINKS.map((link, i) => (
                   <motion.div
                     key={link.label}
-                    initial={{ x: 50, opacity: 0 }}
+                    initial={{ x: 20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.1 + i * 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ delay: i * 0.1 }}
                   >
                     <Link
                       href={link.href}
-                      onClick={(e) => {
-                        if ((window as any).lenis) {
-                          e.preventDefault();
-                          (window as any).lenis.scrollTo(link.href, { duration: 2 });
-                        }
-                        setIsMenuOpen(false);
-                      }}
-                      className="group flex flex-col"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="group flex items-center gap-4 py-2"
                     >
-                      <div className="flex items-baseline gap-4">
-                         <span className="text-[0.6rem] font-mono font-bold text-primary/40 group-hover:text-primary transition-colors duration-500">
-                           0{i+1}_
-                         </span>
-                         <div className="flex items-center gap-6 overflow-hidden">
-                           <span className="text-4xl md:text-5xl font-black tracking-tighter uppercase text-muted-foreground group-hover:text-foreground transition-all duration-500 inline-block group-hover:translate-x-1">
-                             {link.label}
-                           </span>
-                           <div className="h-px w-0 bg-primary group-hover:w-20 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
-                         </div>
+                      <div className="w-10 h-10 rounded-2xl bg-muted/30 border border-border/20 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-500">
+                        <link.icon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                       </div>
-                      <div className="mt-1 h-px w-full bg-border/10 overflow-hidden">
-                        <div className="h-full w-full bg-linear-to-r from-primary/20 via-primary to-transparent -translate-x-full group-hover:translate-x-0 transition-transform duration-700" />
+                      <div className="flex flex-col">
+                        <span className="text-[0.55rem] font-mono font-bold text-primary/40 uppercase tracking-widest leading-none mb-1">Step_0{i+1}</span>
+                        <span className="text-xl font-bold tracking-tight uppercase text-foreground/80 group-hover:text-primary transition-colors">{link.label}</span>
                       </div>
                     </Link>
                   </motion.div>
                 ))}
-              </nav>
+              </div>
 
-              {/* Panel Footer */}
-              <div className="relative z-10 p-8 md:p-12 border-t border-border/10 bg-muted/5">
-                <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <a
-                    href="/resume"
-                    className="relative group flex items-center justify-center w-full py-5 rounded-2xl border border-primary/20 bg-primary/5 overflow-hidden transition-all duration-500"
-                  >
-                    <div className="absolute inset-0 bg-linear-to-r from-primary/10 via-primary/20 to-primary/10 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                    <span className="relative z-10 text-[0.7rem] font-black tracking-[0.4em] uppercase text-primary group-hover:text-foreground transition-colors">
-                      Download_Resume.PDF
-                    </span>
+              {/* Bottom Info Section */}
+              <div className="relative z-10 p-8 border-t border-border/10 bg-muted/10">
+                <div className="flex flex-col gap-6">
+                  <a href="/resume" className="flex items-center justify-between p-4 rounded-2xl bg-foreground text-background transition-all hover:scale-[1.02] active:scale-95">
+                    <span className="text-[0.6rem] font-black uppercase tracking-[0.2em]">Resume</span>
+                    <ArrowUpRight className="w-4 h-4" />
                   </a>
                   
-                  <div className="mt-10 flex flex-col gap-3">
-                    <div className="flex items-center gap-2 mb-2">
-                       <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                       <span className="text-[0.55rem] font-black tracking-[0.3em] uppercase text-muted-foreground/80">Available for projects</span>
+                  <div className="flex justify-between items-center px-2">
+                    <div className="flex gap-5">
+                      <span className="text-[0.6rem] font-bold text-muted-foreground hover:text-primary transition-colors cursor-pointer">GH</span>
+                      <span className="text-[0.6rem] font-bold text-muted-foreground hover:text-primary transition-colors cursor-pointer">LI</span>
+                      <span className="text-[0.6rem] font-bold text-muted-foreground hover:text-primary transition-colors cursor-pointer">X</span>
                     </div>
-                     <span className="text-[0.5rem] font-bold tracking-[0.2em] text-muted-foreground/30 uppercase">© 2026 Crafted with precision_</span>
+                    <div className="flex items-center gap-2">
+                       <span className="text-[0.5rem] font-bold text-muted-foreground/40 uppercase tracking-tighter">Live</span>
+                       <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                    </div>
                   </div>
-                </motion.div>
-              </div>
-
-              {/* Architectural accent */}
-              <div className="absolute bottom-0 right-0 w-32 h-32 opacity-[0.05] pointer-events-none translate-x-12 translate-y-12">
-                 <div className="absolute inset-0 border-20 border-primary rounded-full" />
+                </div>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
 
@@ -292,14 +202,6 @@ export default function Navbar() {
         .glass-card {
           backdrop-filter: blur(15px);
           background: var(--border);
-        }
-        @keyframes shimmer-slow {
-          0% { background-position: -200% 0; }
-          100% { background-position: 200% 0; }
-        }
-        .animate-shimmer {
-          background-size: 300% 100%;
-          animation: shimmer-slow 15s linear infinite;
         }
       `}</style>
     </>

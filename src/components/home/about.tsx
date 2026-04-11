@@ -8,7 +8,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative min-h-screen w-full flex items-center bg-transparent overflow-hidden"
+      className="relative min-h-screen w-full bg-transparent overflow-hidden"
     >
 
 
@@ -31,7 +31,7 @@ export default function About() {
       </div>
       {/* ========================= */}
 
-      <SectionLayout className="relative z-10">
+      <SectionLayout className="relative z-10 mt-12 md:mt-33">
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-16 lg:gap-32 items-center">
           {/* Left Column: Story & Identity */}
           <div className="flex flex-col items-start w-full">

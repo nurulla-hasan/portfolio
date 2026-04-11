@@ -19,13 +19,25 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    handleScroll();
+    handleResize();
+    
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -33,13 +45,13 @@ export default function Navbar() {
       <motion.header
         initial={false}
         animate={{
-          top: isScrolled ? 20 : 0,
-          width: isScrolled ? "65%" : "100%",
-          paddingTop: isScrolled ? 12 : 20,
-          paddingBottom: isScrolled ? 12 : 20,
-          paddingLeft: isScrolled ? 32 : 40,
-          paddingRight: isScrolled ? 32 : 40,
-          borderRadius: isScrolled ? 100 : 0,
+          top: isScrolled ? (isMobile ? 0 : 20) : 0,
+          width: isScrolled ? (isMobile ? "100%" : "65%") : "100%",
+          paddingTop: isScrolled ? (isMobile ? 12 : 12) : (isMobile ? 14 : 20),
+          paddingBottom: isScrolled ? (isMobile ? 12 : 12) : (isMobile ? 14 : 20),
+          paddingLeft: isScrolled ? (isMobile ? 24 : 32) : (isMobile ? 24 : 40),
+          paddingRight: isScrolled ? (isMobile ? 24 : 32) : (isMobile ? 24 : 40),
+          borderRadius: isScrolled ? (isMobile ? 0 : 100) : 0,
         }}
         transition={{
           type: "spring",

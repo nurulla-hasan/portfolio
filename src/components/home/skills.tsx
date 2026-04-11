@@ -39,7 +39,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative min-h-screen w-full flex items-center bg-transparent overflow-hidden"
+      className="relative min-h-screen w-full bg-transparent overflow-hidden"
     >
       {/* ======================== */}
       {/* Synchronized Horizontal Lines */}
@@ -59,7 +59,7 @@ export default function Skills() {
       </div>
       {/* ======================== */}
 
-      <SectionLayout className="relative z-10">
+      <SectionLayout className="relative z-10 mt-12 md:mt-33">
         {/* Section Header */}
         <div className="flex items-center justify-between mb-10 md:mb-16 relative">
           <div className="flex flex-col">

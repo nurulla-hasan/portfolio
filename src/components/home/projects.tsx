@@ -134,6 +134,7 @@ function ProjectRow({ project, index }: { project: any; index: number }) {
               src={project.image}
               alt={project.title}
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover scale-105 group-hover/viewport:scale-100 transition-transform duration-1000"
             />
 

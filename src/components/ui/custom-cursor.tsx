@@ -53,7 +53,7 @@ export default function CustomCursor() {
             animate={{ scale: 1, opacity: 1 }}
             className="filter drop-shadow-[0_0_8px_var(--primary)] text-primary"
           >
-            <Pointer className="w-6 h-6 fill-primary/10" strokeWidth={1.5} />
+            <Pointer className="w-5 h-5 fill-primary/10" strokeWidth={1.5} />
           </motion.div>
         )}
       </motion.div>

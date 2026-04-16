@@ -4,7 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme-provider";
 import SocialSidebar from "@/components/layout/social-sidebar";
-import CustomCursor from "@/components/ui/custom-cursor";
+// import CustomCursor from "@/components/ui/custom-cursor";
 // import BlueprintBackground from "@/components/layout/blueprint-background";
 
 const comicNeue = Comic_Neue({
@@ -50,7 +50,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <CustomCursor />
+          {/* <CustomCursor /> */}
           {children}
           <SocialSidebar />
         </ThemeProvider>

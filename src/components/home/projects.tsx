@@ -78,7 +78,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative min-h-screen overflow-hidden bg-transparent border"
+      className="relative min-h-screen overflow-hidden bg-transparent"
     >
       <SectionLayout className="mt-12 md:mt-33">
         {/* Section Header - Synchronized with Experience/Skills */}

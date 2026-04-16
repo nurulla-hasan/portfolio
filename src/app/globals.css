@@ -482,9 +482,6 @@ body {
     @apply font-sans;
     color-scheme: dark;
   }
-  * {
-    cursor: none !important;
-  }
   ::selection {
     background: var(--chart-4);
   }

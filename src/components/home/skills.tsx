@@ -39,7 +39,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative min-h-screen w-full bg-transparent overflow-hidden border"
+      className="relative min-h-screen w-full bg-transparent overflow-hidden"
     >
       {/* ======================== */}
       {/* Synchronized Horizontal Lines */}

@@ -41,7 +41,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative min-h-screen overflow-hidden bg-transparent border"
+      className="relative min-h-screen overflow-hidden bg-transparent"
     >
       {/* Synchronized Horizontal Lines */}
       {/* <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">

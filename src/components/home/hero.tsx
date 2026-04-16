@@ -12,16 +12,6 @@ export default function Hero() {
         id="home"
         className="relative min-h-screen w-full bg-transparent overflow-hidden"
       >
-        {/* <div
-          className="hidden lg:block absolute left-0 right-0 top-[88%] h-px bg-border/30 anim-line-h z-0 overflow-hidden"
-          style={{ animationDelay: "0.8s" }}
-        >
-          <div
-            className="absolute top-0 h-px w-16 bg-linear-to-r from-transparent to-primary"
-            style={{ animation: "walk-h 40s linear infinite 0s" }}
-          />
-        </div> */}
-        {/* ========================= */}
 
         <SectionLayout className="relative z-10 mt-12 md:mt-20">
           <div className="anim-element flex items-center gap-4 mb-8 md:mb-12">
